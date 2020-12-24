@@ -25,7 +25,6 @@ namespace CaffeBar
         {
             panelPlaylistSubmenu.Visible = false;
             panelMediaSubmenu.Visible = false;
-            panelEquilizerSubmenu.Visible = false;
         }
 
         private void hideSubmenu()
@@ -34,8 +33,6 @@ namespace CaffeBar
                 panelMediaSubmenu.Visible = false;
             if (panelPlaylistSubmenu.Visible == true)
                 panelPlaylistSubmenu.Visible = false;
-            if (panelEquilizerSubmenu.Visible == false)
-                panelEquilizerSubmenu.Visible = true;
         }
 
         private void showSubMenu(Panel subMenu )
@@ -112,36 +109,7 @@ namespace CaffeBar
         }
         #endregion
 
-        #region EquilizerSubmenu
-        private void buttonEquilizer_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelEquilizerSubmenu);
-        }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
-        }
-        #endregion
         #region Help
         private void buttonHelp_Click(object sender, EventArgs e)
         {

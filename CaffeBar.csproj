@@ -150,6 +150,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CaffeBarDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\shelf_empty-removebg-previewresize.png" />
+    <None Include="Resources\facebook_profile_image-removebg-preview.png" />
     <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
