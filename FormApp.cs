@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CaffeBar
 {
-    public partial class App : Form
+    public partial class FormApp : Form
     {
-        public App()
+        public FormApp()
         {
             InitializeComponent();
             SuspendLayout();
@@ -53,7 +53,7 @@ namespace CaffeBar
             showSubMenu(panelMediaSubmenu);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonNewReceipt_Click(object sender, EventArgs e)
         {
             //openChildForm(new Form1());
             //--

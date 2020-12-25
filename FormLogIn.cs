@@ -38,7 +38,6 @@ using System.Data.SqlClient;
 
 namespace CaffeBar
 {
-    
 
     public partial class FormLogIn : Form
     {
@@ -79,7 +78,7 @@ namespace CaffeBar
             MessageBox.Show(pass);
             */
             SqlConnection connection = DB.getConnection();
-            SqlCommand command = new SqlCommand("SELECT Password FROM [User] WHERE Username=@username;", connection);
+            SqlCommand command = new SqlCommand("SELECT Password, Authorisation FROM [User] WHERE Username=@username;", connection);
             command.Parameters.Add("@username", SqlDbType.NChar);
             command.Parameters["@username"].Value = textBoxUsername.Text.ToString();
 
@@ -98,6 +97,7 @@ namespace CaffeBar
                 }
                 dataReader.Read();
                 pass = (String)dataReader.GetValue(0);
+                User.authorisation = dataReader.GetString(1);
             }
             catch (Exception ex)
             {

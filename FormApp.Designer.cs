@@ -1,7 +1,7 @@
 ﻿
 namespace CaffeBar
 {
-    partial class App
+    partial class FormApp
     {
         /// <summary>
         /// Required designer variable.
@@ -29,30 +29,30 @@ namespace CaffeBar
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(App));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApp));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.panelPlaylistSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.buttonBackStorage = new System.Windows.Forms.Button();
-            this.buttonStorage = new System.Windows.Forms.Button();
             this.panelMediaSubmenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.buttonMedia = new System.Windows.Forms.Button();
+            this.buttonNewReceipt = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChieldForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonStorage = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelPlaylistSubmenu.SuspendLayout();
             this.panelMediaSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChieldForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -63,7 +63,7 @@ namespace CaffeBar
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubmenu);
             this.panelSideMenu.Controls.Add(this.buttonStorage);
             this.panelSideMenu.Controls.Add(this.panelMediaSubmenu);
-            this.panelSideMenu.Controls.Add(this.buttonMedia);
+            this.panelSideMenu.Controls.Add(this.buttonRegister);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
@@ -111,7 +111,7 @@ namespace CaffeBar
             this.button5.ForeColor = System.Drawing.Color.Gainsboro;
             this.button5.Location = new System.Drawing.Point(0, 90);
             this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button5.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(250, 45);
             this.button5.TabIndex = 2;
             this.button5.Text = "button5";
@@ -129,7 +129,7 @@ namespace CaffeBar
             this.button6.ForeColor = System.Drawing.Color.Gainsboro;
             this.button6.Location = new System.Drawing.Point(0, 45);
             this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button6.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(250, 45);
             this.button6.TabIndex = 1;
             this.button6.Text = "button6";
@@ -147,7 +147,7 @@ namespace CaffeBar
             this.buttonBackStorage.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonBackStorage.Location = new System.Drawing.Point(0, 0);
             this.buttonBackStorage.Name = "buttonBackStorage";
-            this.buttonBackStorage.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonBackStorage.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.buttonBackStorage.Size = new System.Drawing.Size(250, 45);
             this.buttonBackStorage.TabIndex = 0;
             this.buttonBackStorage.Text = "Back Storage";
@@ -155,33 +155,12 @@ namespace CaffeBar
             this.buttonBackStorage.UseVisualStyleBackColor = true;
             this.buttonBackStorage.Click += new System.EventHandler(this.button7_Click);
             // 
-            // buttonStorage
-            // 
-            this.buttonStorage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStorage.FlatAppearance.BorderSize = 0;
-            this.buttonStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonStorage.Image = global::CaffeBar.Properties.Resources.shelf_empty_removebg_previewresize;
-            this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStorage.Location = new System.Drawing.Point(0, 282);
-            this.buttonStorage.Name = "buttonStorage";
-            this.buttonStorage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonStorage.Size = new System.Drawing.Size(250, 45);
-            this.buttonStorage.TabIndex = 3;
-            this.buttonStorage.Text = "Storage";
-            this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonStorage.UseVisualStyleBackColor = true;
-            this.buttonStorage.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
-            // 
             // panelMediaSubmenu
             // 
             this.panelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panelMediaSubmenu.Controls.Add(this.button4);
             this.panelMediaSubmenu.Controls.Add(this.button3);
-            this.panelMediaSubmenu.Controls.Add(this.button2);
+            this.panelMediaSubmenu.Controls.Add(this.buttonNewReceipt);
             this.panelMediaSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMediaSubmenu.Location = new System.Drawing.Point(0, 145);
             this.panelMediaSubmenu.Name = "panelMediaSubmenu";
@@ -198,7 +177,7 @@ namespace CaffeBar
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
             this.button4.Location = new System.Drawing.Point(0, 90);
             this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button4.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(250, 45);
             this.button4.TabIndex = 2;
             this.button4.Text = "button4";
@@ -216,7 +195,7 @@ namespace CaffeBar
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
             this.button3.Location = new System.Drawing.Point(0, 45);
             this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button3.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(250, 45);
             this.button3.TabIndex = 1;
             this.button3.Text = "button3";
@@ -224,41 +203,23 @@ namespace CaffeBar
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // buttonNewReceipt
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(250, 45);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // buttonMedia
-            // 
-            this.buttonMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMedia.FlatAppearance.BorderSize = 0;
-            this.buttonMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMedia.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonMedia.Location = new System.Drawing.Point(0, 100);
-            this.buttonMedia.Name = "buttonMedia";
-            this.buttonMedia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonMedia.Size = new System.Drawing.Size(250, 45);
-            this.buttonMedia.TabIndex = 1;
-            this.buttonMedia.Text = "Media";
-            this.buttonMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMedia.UseVisualStyleBackColor = true;
-            this.buttonMedia.Click += new System.EventHandler(this.buttonMedia_Click);
+            this.buttonNewReceipt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonNewReceipt.FlatAppearance.BorderSize = 0;
+            this.buttonNewReceipt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonNewReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonNewReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNewReceipt.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonNewReceipt.Location = new System.Drawing.Point(0, 0);
+            this.buttonNewReceipt.Name = "buttonNewReceipt";
+            this.buttonNewReceipt.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.buttonNewReceipt.Size = new System.Drawing.Size(250, 45);
+            this.buttonNewReceipt.TabIndex = 0;
+            this.buttonNewReceipt.Text = "New receipt";
+            this.buttonNewReceipt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNewReceipt.UseVisualStyleBackColor = true;
+            this.buttonNewReceipt.Click += new System.EventHandler(this.buttonNewReceipt_Click);
             // 
             // panelLogo
             // 
@@ -268,17 +229,6 @@ namespace CaffeBar
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 0;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::CaffeBar.Properties.Resources.facebook_profile_image_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // panelChieldForm
             // 
@@ -301,7 +251,59 @@ namespace CaffeBar
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // App
+            // buttonStorage
+            // 
+            this.buttonStorage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonStorage.FlatAppearance.BorderSize = 0;
+            this.buttonStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonStorage.Image = global::CaffeBar.Properties.Resources.shelf_empty_removebg_previewresize;
+            this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.Location = new System.Drawing.Point(0, 282);
+            this.buttonStorage.Name = "buttonStorage";
+            this.buttonStorage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonStorage.Size = new System.Drawing.Size(250, 45);
+            this.buttonStorage.TabIndex = 3;
+            this.buttonStorage.Text = " Storage";
+            this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonStorage.UseVisualStyleBackColor = true;
+            this.buttonStorage.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRegister.FlatAppearance.BorderSize = 0;
+            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegister.Location = new System.Drawing.Point(0, 100);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonRegister.Size = new System.Drawing.Size(250, 45);
+            this.buttonRegister.TabIndex = 1;
+            this.buttonRegister.Text = " Register";
+            this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonMedia_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::CaffeBar.Properties.Resources.facebook_profile_image_removebg_preview;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -311,16 +313,16 @@ namespace CaffeBar
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "App";
+            this.Name = "FormApp";
             this.Text = "App";
             this.panelSideMenu.ResumeLayout(false);
             this.panelPlaylistSubmenu.ResumeLayout(false);
             this.panelMediaSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChieldForm.ResumeLayout(false);
             this.panelChieldForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,8 +333,8 @@ namespace CaffeBar
         private System.Windows.Forms.Panel panelMediaSubmenu;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonMedia;
+        private System.Windows.Forms.Button buttonNewReceipt;
+        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelPlaylistSubmenu;
         private System.Windows.Forms.Button button5;
