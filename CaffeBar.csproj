@@ -73,11 +73,17 @@
       <DependentUpon>CaffeBarDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormBackStorage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormBackStorage.Designer.cs">
+      <DependentUpon>FormBackStorage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormItemStorage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormItemStorage.Designer.cs">
+      <DependentUpon>FormItemStorage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogIn.cs">
       <SubType>Form</SubType>
@@ -90,8 +96,11 @@
     <EmbeddedResource Include="App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormBackStorage.resx">
+      <DependentUpon>FormBackStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormItemStorage.resx">
+      <DependentUpon>FormItemStorage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>

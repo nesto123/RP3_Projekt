@@ -21,7 +21,7 @@ namespace CaffeBar
             {
                 try
                 {
-                    DB.db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\CaffeBar\CaffeBarDatabase.mdf;Integrated Security=True");
+                    DB.db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True");
                     DB.db.Open();
                 }
                 catch (Exception ex) { throw ex; }

@@ -55,7 +55,7 @@ namespace CaffeBar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new Form1());
+            //openChildForm(new Form1());
             //--
             //Kod
             //--
@@ -86,6 +86,7 @@ namespace CaffeBar
 
         private void button7_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormBackStorage());
             //--
             //Kod
             //--
