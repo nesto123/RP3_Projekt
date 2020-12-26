@@ -1,0 +1,1 @@
+﻿INSERT INTO dbo.Receipts(Total,Payment_method) output INSERTED.ID VALUES(10,'Gotovina')

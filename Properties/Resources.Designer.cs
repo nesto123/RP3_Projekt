@@ -63,9 +63,19 @@ namespace CaffeBar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cash_register1_removebg_preview_1_ {
+        internal static System.Drawing.Bitmap cash_register1_removebg_preview {
             get {
-                object obj = ResourceManager.GetObject("cash_register1-removebg-preview(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("cash_register1-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("close-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

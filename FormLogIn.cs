@@ -116,6 +116,11 @@ namespace CaffeBar
                 MessageBox.Show("Invalid credentials!");
 
         }
+
+        private void FormLogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

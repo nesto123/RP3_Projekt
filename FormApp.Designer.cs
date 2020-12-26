@@ -36,23 +36,23 @@ namespace CaffeBar
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.buttonBackStorage = new System.Windows.Forms.Button();
+            this.buttonStorage = new System.Windows.Forms.Button();
             this.panelMediaSubmenu = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonNewReceipt = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChieldForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonStorage = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
             this.panelPlaylistSubmenu.SuspendLayout();
             this.panelMediaSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChieldForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -155,6 +155,27 @@ namespace CaffeBar
             this.buttonBackStorage.UseVisualStyleBackColor = true;
             this.buttonBackStorage.Click += new System.EventHandler(this.button7_Click);
             // 
+            // buttonStorage
+            // 
+            this.buttonStorage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonStorage.FlatAppearance.BorderSize = 0;
+            this.buttonStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonStorage.Image = global::CaffeBar.Properties.Resources.shelf_empty_removebg_previewresize;
+            this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.Location = new System.Drawing.Point(0, 282);
+            this.buttonStorage.Name = "buttonStorage";
+            this.buttonStorage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonStorage.Size = new System.Drawing.Size(250, 45);
+            this.buttonStorage.TabIndex = 3;
+            this.buttonStorage.Text = " Storage";
+            this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonStorage.UseVisualStyleBackColor = true;
+            this.buttonStorage.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
+            // 
             // panelMediaSubmenu
             // 
             this.panelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -221,6 +242,27 @@ namespace CaffeBar
             this.buttonNewReceipt.UseVisualStyleBackColor = true;
             this.buttonNewReceipt.Click += new System.EventHandler(this.buttonNewReceipt_Click);
             // 
+            // buttonRegister
+            // 
+            this.buttonRegister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRegister.FlatAppearance.BorderSize = 0;
+            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonRegister.Image = global::CaffeBar.Properties.Resources.cash_register1_removebg_preview;
+            this.buttonRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegister.Location = new System.Drawing.Point(0, 100);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonRegister.Size = new System.Drawing.Size(250, 45);
+            this.buttonRegister.TabIndex = 1;
+            this.buttonRegister.Text = " Register";
+            this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonMedia_Click);
+            // 
             // panelLogo
             // 
             this.panelLogo.Controls.Add(this.pictureBox2);
@@ -229,6 +271,17 @@ namespace CaffeBar
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(250, 100);
             this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::CaffeBar.Properties.Resources.facebook_profile_image_removebg_preview;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // panelChieldForm
             // 
@@ -251,58 +304,6 @@ namespace CaffeBar
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonStorage
-            // 
-            this.buttonStorage.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonStorage.FlatAppearance.BorderSize = 0;
-            this.buttonStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonStorage.Image = global::CaffeBar.Properties.Resources.shelf_empty_removebg_previewresize;
-            this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStorage.Location = new System.Drawing.Point(0, 282);
-            this.buttonStorage.Name = "buttonStorage";
-            this.buttonStorage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonStorage.Size = new System.Drawing.Size(250, 45);
-            this.buttonStorage.TabIndex = 3;
-            this.buttonStorage.Text = " Storage";
-            this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonStorage.UseVisualStyleBackColor = true;
-            this.buttonStorage.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRegister.FlatAppearance.BorderSize = 0;
-            this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegister.Location = new System.Drawing.Point(0, 100);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonRegister.Size = new System.Drawing.Size(250, 45);
-            this.buttonRegister.TabIndex = 1;
-            this.buttonRegister.Text = " Register";
-            this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonMedia_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::CaffeBar.Properties.Resources.facebook_profile_image_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 100);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,10 +320,10 @@ namespace CaffeBar
             this.panelPlaylistSubmenu.ResumeLayout(false);
             this.panelMediaSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChieldForm.ResumeLayout(false);
             this.panelChieldForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

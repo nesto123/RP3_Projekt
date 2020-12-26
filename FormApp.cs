@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CaffeBar
@@ -35,7 +28,7 @@ namespace CaffeBar
                 panelPlaylistSubmenu.Visible = false;
         }
 
-        private void showSubMenu(Panel subMenu )
+        private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -55,7 +48,7 @@ namespace CaffeBar
 
         private void buttonNewReceipt_Click(object sender, EventArgs e)
         {
-            //openChildForm(new Form1());
+            openChildForm(new FormNewReceipt());
             //--
             //Kod
             //--
@@ -135,5 +128,7 @@ namespace CaffeBar
             childForm.BringToFront();
             childForm.Show();
         }
+
+
     }
 }
