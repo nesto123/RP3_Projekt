@@ -42,6 +42,9 @@ namespace CaffeBar
             this.label6 = new System.Windows.Forms.Label();
             this.butttonCancel = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -49,7 +52,7 @@ namespace CaffeBar
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(78, 43);
+            this.label5.Location = new System.Drawing.Point(73, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 17);
             this.label5.TabIndex = 15;
@@ -60,7 +63,7 @@ namespace CaffeBar
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(78, 104);
+            this.label1.Location = new System.Drawing.Point(73, 174);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 16;
@@ -71,7 +74,7 @@ namespace CaffeBar
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(78, 72);
+            this.label2.Location = new System.Drawing.Point(73, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 17;
@@ -82,7 +85,7 @@ namespace CaffeBar
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(78, 130);
+            this.label3.Location = new System.Drawing.Point(73, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 17);
             this.label3.TabIndex = 18;
@@ -93,7 +96,7 @@ namespace CaffeBar
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(78, 159);
+            this.label4.Location = new System.Drawing.Point(73, 229);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 17);
             this.label4.TabIndex = 19;
@@ -102,7 +105,7 @@ namespace CaffeBar
             // textBoxItem
             // 
             this.textBoxItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxItem.Location = new System.Drawing.Point(226, 69);
+            this.textBoxItem.Location = new System.Drawing.Point(221, 139);
             this.textBoxItem.Name = "textBoxItem";
             this.textBoxItem.Size = new System.Drawing.Size(192, 23);
             this.textBoxItem.TabIndex = 2;
@@ -110,16 +113,17 @@ namespace CaffeBar
             // textBoxId
             // 
             this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxId.Location = new System.Drawing.Point(226, 40);
+            this.textBoxId.Location = new System.Drawing.Point(221, 110);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.ReadOnly = true;
             this.textBoxId.Size = new System.Drawing.Size(192, 23);
             this.textBoxId.TabIndex = 10;
+            this.textBoxId.TabStop = false;
             // 
             // textBoxCooler
             // 
             this.textBoxCooler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCooler.Location = new System.Drawing.Point(226, 127);
+            this.textBoxCooler.Location = new System.Drawing.Point(221, 197);
             this.textBoxCooler.Name = "textBoxCooler";
             this.textBoxCooler.Size = new System.Drawing.Size(192, 23);
             this.textBoxCooler.TabIndex = 4;
@@ -127,7 +131,7 @@ namespace CaffeBar
             // textBoxPrice
             // 
             this.textBoxPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrice.Location = new System.Drawing.Point(226, 98);
+            this.textBoxPrice.Location = new System.Drawing.Point(221, 168);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(192, 23);
             this.textBoxPrice.TabIndex = 3;
@@ -135,7 +139,7 @@ namespace CaffeBar
             // textBoxBackstorage
             // 
             this.textBoxBackstorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBackstorage.Location = new System.Drawing.Point(226, 156);
+            this.textBoxBackstorage.Location = new System.Drawing.Point(221, 226);
             this.textBoxBackstorage.Name = "textBoxBackstorage";
             this.textBoxBackstorage.Size = new System.Drawing.Size(192, 23);
             this.textBoxBackstorage.TabIndex = 5;
@@ -145,7 +149,7 @@ namespace CaffeBar
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(424, 101);
+            this.label6.Location = new System.Drawing.Point(419, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 17);
             this.label6.TabIndex = 25;
@@ -158,7 +162,7 @@ namespace CaffeBar
             this.butttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butttonCancel.ForeColor = System.Drawing.Color.White;
-            this.butttonCancel.Location = new System.Drawing.Point(270, 209);
+            this.butttonCancel.Location = new System.Drawing.Point(261, 330);
             this.butttonCancel.Name = "butttonCancel";
             this.butttonCancel.Size = new System.Drawing.Size(100, 35);
             this.butttonCancel.TabIndex = 7;
@@ -173,7 +177,7 @@ namespace CaffeBar
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(142, 209);
+            this.buttonSubmit.Location = new System.Drawing.Point(133, 330);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(100, 35);
             this.buttonSubmit.TabIndex = 6;
@@ -181,12 +185,35 @@ namespace CaffeBar
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(509, 41);
+            this.panel1.TabIndex = 26;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(216, 9);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(67, 30);
+            this.labelTitle.TabIndex = 11;
+            this.labelTitle.Text = "Item";
+            // 
             // FormItemStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(532, 282);
+            this.CancelButton = this.butttonCancel;
+            this.ClientSize = new System.Drawing.Size(509, 452);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.butttonCancel);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.label6);
@@ -200,8 +227,12 @@ namespace CaffeBar
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FormItemStorage";
             this.Text = "FormItemStorage";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +253,7 @@ namespace CaffeBar
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button butttonCancel;
         private System.Windows.Forms.Button buttonSubmit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelTitle;
     }
 }

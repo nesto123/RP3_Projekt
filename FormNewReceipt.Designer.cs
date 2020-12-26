@@ -30,8 +30,8 @@ namespace CaffeBar
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +48,9 @@ namespace CaffeBar
             this.flowLayoutPanelItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBoxPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).BeginInit();
@@ -56,43 +59,43 @@ namespace CaffeBar
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 30;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.dataGridView1.Location = new System.Drawing.Point(12, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(459, 261);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.Size = new System.Drawing.Size(721, 243);
             this.dataGridView1.TabIndex = 2;
             // 
             // buttonPrint
@@ -101,17 +104,17 @@ namespace CaffeBar
             this.buttonPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.buttonPrint.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.ForeColor = System.Drawing.Color.Silver;
             this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPrint.Location = new System.Drawing.Point(142, 210);
+            this.buttonPrint.Location = new System.Drawing.Point(167, 118);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(100, 30);
             this.buttonPrint.TabIndex = 3;
             this.buttonPrint.Text = "Print receipt";
             this.buttonPrint.UseVisualStyleBackColor = false;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonNewItem_Click);
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // storageBindingSource
             // 
@@ -142,11 +145,11 @@ namespace CaffeBar
             this.buttonDeleteItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.buttonDeleteItem.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonDeleteItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonDeleteItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonDeleteItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.buttonDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeleteItem.Location = new System.Drawing.Point(142, 91);
+            this.buttonDeleteItem.Location = new System.Drawing.Point(167, 82);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
             this.buttonDeleteItem.Size = new System.Drawing.Size(100, 30);
             this.buttonDeleteItem.TabIndex = 5;
@@ -160,37 +163,38 @@ namespace CaffeBar
             this.buttonEditItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.buttonEditItem.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonEditItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonEditItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonEditItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.buttonEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonEditItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditItem.Location = new System.Drawing.Point(142, 19);
+            this.buttonEditItem.Location = new System.Drawing.Point(41, 118);
             this.buttonEditItem.Name = "buttonEditItem";
             this.buttonEditItem.Size = new System.Drawing.Size(100, 30);
             this.buttonEditItem.TabIndex = 6;
             this.buttonEditItem.Text = "Jos nista ne radi";
             this.buttonEditItem.UseVisualStyleBackColor = false;
-            this.buttonEditItem.Click += new System.EventHandler(this.buttonEditItem_Click);
             // 
             // buttonCloseForm
             // 
+            this.buttonCloseForm.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.buttonCloseForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.buttonCloseForm.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.buttonCloseForm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.buttonCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCloseForm.ForeColor = System.Drawing.Color.Red;
             this.buttonCloseForm.Image = global::CaffeBar.Properties.Resources.close_removebg_preview;
-            this.buttonCloseForm.Location = new System.Drawing.Point(12, 12);
+            this.buttonCloseForm.Location = new System.Drawing.Point(693, 9);
             this.buttonCloseForm.Name = "buttonCloseForm";
-            this.buttonCloseForm.Size = new System.Drawing.Size(30, 26);
+            this.buttonCloseForm.Size = new System.Drawing.Size(26, 26);
             this.buttonCloseForm.TabIndex = 7;
             this.buttonCloseForm.UseVisualStyleBackColor = false;
             this.buttonCloseForm.Click += new System.EventHandler(this.buttonCloseForm_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Controls.Add(this.buttonCloseForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -200,10 +204,12 @@ namespace CaffeBar
             // 
             // flowLayoutPanelItems
             // 
-            this.flowLayoutPanelItems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanelItems.AutoScroll = true;
+            this.flowLayoutPanelItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelItems.Location = new System.Drawing.Point(0, 41);
             this.flowLayoutPanelItems.Name = "flowLayoutPanelItems";
-            this.flowLayoutPanelItems.Size = new System.Drawing.Size(731, 113);
+            this.flowLayoutPanelItems.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.flowLayoutPanelItems.Size = new System.Drawing.Size(731, 392);
             this.flowLayoutPanelItems.TabIndex = 9;
             // 
             // panel2
@@ -213,9 +219,9 @@ namespace CaffeBar
             this.panel2.Controls.Add(this.buttonPrint);
             this.panel2.Controls.Add(this.buttonDeleteItem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(477, 154);
+            this.panel2.Location = new System.Drawing.Point(452, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 279);
+            this.panel2.Size = new System.Drawing.Size(279, 243);
             this.panel2.TabIndex = 10;
             // 
             // comboBoxPaymentMethod
@@ -230,11 +236,43 @@ namespace CaffeBar
             this.comboBoxPaymentMethod.Items.AddRange(new object[] {
             "Gotovina",
             "Kartica"});
-            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(25, 28);
+            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(41, 88);
             this.comboBoxPaymentMethod.Name = "comboBoxPaymentMethod";
             this.comboBoxPaymentMethod.Size = new System.Drawing.Size(100, 21);
             this.comboBoxPaymentMethod.TabIndex = 7;
             this.comboBoxPaymentMethod.Tag = "";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(731, 243);
+            this.panel3.TabIndex = 11;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(12, 3);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(159, 30);
+            this.labelTitle.TabIndex = 8;
+            this.labelTitle.Text = "New receipt";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel2);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 190);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(731, 243);
+            this.panel4.TabIndex = 10;
             // 
             // FormNewReceipt
             // 
@@ -242,10 +280,9 @@ namespace CaffeBar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(731, 433);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.flowLayoutPanelItems);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "FormNewReceipt";
             this.Text = "FormStorage";
             this.Load += new System.EventHandler(this.FormNewReceipt_Load);
@@ -256,7 +293,10 @@ namespace CaffeBar
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -279,5 +319,8 @@ namespace CaffeBar
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelItems;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox comboBoxPaymentMethod;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Panel panel4;
     }
 }

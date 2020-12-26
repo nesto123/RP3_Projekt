@@ -25,30 +25,34 @@ namespace CaffeBar
 
         private void FormBackStorage_Load(object sender, EventArgs e)
         {
-            SuspendLayout();
             UpdateStorageView();
-            ResumeLayout();
         }
 
-        private void UpdateStorageView()
+        private void UpdateStorageView(String filter = "")
         {
+            SuspendLayout();
             SqlConnection connection = DB.getConnection();
-
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage", connection);
             DataSet dataset = new DataSet();
 
-            //dataGridView1.VirtualMode = false;
-            //dataGridView1.Columns.Clear();
-            //dataGridView1.AutoGenerateColumns = true;
+            using(SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage", connection))
+            {
+                adapter.Fill(dataset);//, "Storage");
+            }
 
-            adapter.Fill(dataset);//, "Storage");
-            dataGridView1.DataSource = dataset.Tables[0];
-//            dataGridView1.DataMember = "Storage";
-            
+            var dv = dataset.Tables[0].DefaultView;
+            dv.RowFilter = filter;
+            //var newDS = new DataSet();
+            //var newDT = dv.ToTable();
+            //newDS.Tables.Add(newDT);
+
+
+            dataGridView1.DataSource = dv;//dataset.Tables[0];
+            //            dataGridView1.DataMember = "Storage";
+
 
 
             DB.closeConnection();
-
+            ResumeLayout();
         }
 
         private void buttonNewItem_Click(object sender, EventArgs e)
@@ -60,13 +64,14 @@ namespace CaffeBar
 
         private void buttonEditItem_Click(object sender, EventArgs e)
         {
+
             FormItemStorage form = new FormItemStorage();
 
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 form.textBoxId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 form.textBoxItem.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                form.textBoxPrice.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString().Replace(",",".");
+                form.textBoxPrice.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString().Replace(",", ".");
                 form.textBoxCooler.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
                 form.textBoxBackstorage.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
                 form.ShowDialog();
@@ -103,6 +108,14 @@ namespace CaffeBar
                 MessageBox.Show("Please select a row!");
 
 
+        }
+
+        private void textBoxFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxFilter.Text != "")
+                UpdateStorageView("Item LIKE '*" + textBoxFilter.Text + "*'");
+            else
+                UpdateStorageView();
         }
     }
 }

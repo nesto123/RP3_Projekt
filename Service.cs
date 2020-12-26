@@ -113,9 +113,38 @@ namespace CaffeBar
             {
                 DB.closeConnection();
             }
-
-
             return errorMessage;
+        }
+
+        //get receipt atributes
+        public static List<String> getReceiptDetails( int receiptID, out String errorMessage)
+        {
+            SqlConnection connection = DB.getConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM dbo.Receipts WHERE Id=@id;", connection);
+            errorMessage = "";
+            var list = new List<String>();
+
+            command.Parameters.Add("@id", SqlDbType.Int);
+            command.Parameters["@id"].Value = receiptID;
+            
+            try
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                dataReader.Read();
+                
+                for (var i = 0; i < 5; ++i)
+                    list.Add(dataReader.GetValue(i).ToString());
+            }
+            catch (Exception ex)
+            {
+                errorMessage = "ERROR: Database error! " + ex.Message;
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+            errorMessage = receiptID.ToString();
+            return list;
         }
 
     }

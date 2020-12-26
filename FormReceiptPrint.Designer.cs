@@ -49,7 +49,7 @@ namespace CaffeBar
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormReceiptPrint";
-            this.Text = "FormReceiptPrint";
+            this.Text = "Print receipt";
             this.Load += new System.EventHandler(this.FormReceiptPrint_Load);
             this.ResumeLayout(false);
 

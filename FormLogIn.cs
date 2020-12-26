@@ -10,43 +10,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-/*namespace Connection_Class
-{
-    public class Connection_Query
-    {
-
-        string ConnectionString = "";
-        SqlConnection con;
-
-        public void OpenConection()
-        {
-            con = new SqlConnection(ConnectionString);
-            con.Open();
-        }
-
-
-        public void CloseConnection()
-        {
-            con.Close();
-        }
-
-
-    }
-}*/
-
-
-
 namespace CaffeBar
 {
 
     public partial class FormLogIn : Form
     {
-        
         public FormLogIn()
         {
             InitializeComponent();
         }
-
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -101,8 +73,7 @@ namespace CaffeBar
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: Database connection unsuccessful!" + ex.ToString());
-                
+                MessageBox.Show("ERROR: Database connection unsuccessful!" + ex.ToString());                
             }
             finally
             {
@@ -111,16 +82,37 @@ namespace CaffeBar
 
 
             if (pass == textBoxPassword.Text.ToString())
-                MessageBox.Show("Ulogirani ste!");
+            {
+                this.Hide();
+                FormApp formApp = new FormApp();
+                formApp.ShowDialog();
+            }
             else
                 MessageBox.Show("Invalid credentials!");
-
-        }
-
-        private void FormLogIn_Load(object sender, EventArgs e)
-        {
-
         }
     }
-
 }
+
+/*namespace Connection_Class
+{
+    public class Connection_Query
+    {
+
+        string ConnectionString = "";
+        SqlConnection con;
+
+        public void OpenConection()
+        {
+            con = new SqlConnection(ConnectionString);
+            con.Open();
+        }
+
+
+        public void CloseConnection()
+        {
+            con.Close();
+        }
+
+
+    }
+}*/

@@ -11,7 +11,7 @@ namespace CaffeBar
 
     static class DB
     {
-        //public static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\CaffeBar\CaffeBarDatabase.mdf;Integrated Security=True";
+        //public static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True";
         public static SqlConnection db = null;
 
         public static SqlConnection getConnection()
@@ -19,9 +19,11 @@ namespace CaffeBar
             //MessageBox.Show(DB.db == null);
             if ( DB.db == null )
             {
+                String path = System.IO.Directory.GetCurrentDirectory().Substring(0, System.IO.Directory.GetCurrentDirectory().LastIndexOf(@"\"));
+                path = path.Substring(0, path.LastIndexOf(@"\")) + @"\CaffeBarDatabase.mdf";
                 try
                 {
-                    DB.db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True");
+                    DB.db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + ";Integrated Security=True");
                     DB.db.Open();
                 }
                 catch (Exception ex) { throw ex; }

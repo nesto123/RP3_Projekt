@@ -12,20 +12,22 @@ namespace CaffeBar
 {
     public partial class FormReceiptPrint : Form
     {
-        string _total, _paymentMethod, _receiptId, _date;
+        String _total, _paymentMethod, _receiptId, _date;
         DataTable items;
-        public FormReceiptPrint(in DataTable dataTableReceipt,Double total, String paymentMethod,Int32 receiptId)
+        public FormReceiptPrint( DataTable dataTableReceipt,Double total, String paymentMethod,Int32 receiptId)
         {
             InitializeComponent();
             _total = total.ToString();
             _paymentMethod = paymentMethod.ToString();
             _receiptId = receiptId.ToString();
+            items =new DataTable( );
             items = dataTableReceipt.Copy();
 
         }
 
         private void FormReceiptPrint_Load(object sender, EventArgs e)
         {
+            SuspendLayout();
             items.Columns["Price per unit"].ColumnName = "Price_per_unit";
             items.Columns.Add("Total", typeof(System.Double));
             Double amount, price;
@@ -35,15 +37,16 @@ namespace CaffeBar
                 row["Total"] = amount * price;
             }
 
-            //
-            _date = "1";
+            //popravit!!!!!!!!!!!!!!!!!!!!!!
+            String errorMsg;
+            _date = Service.getReceiptDetails((Int32.Parse(_receiptId)), out errorMsg)[1];
+            //MessageBox.Show( + errorMsg);
+            
 
             ReportDataSource rds = new ReportDataSource("DataSet2", items);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds);
-            
-            //this.reportViewer1.LocalReport.Refresh();
-            
+                        
             ReportParameter[] para = new ReportParameter[]
             {
                 new ReportParameter("parameterTotal",_total),
@@ -54,6 +57,7 @@ namespace CaffeBar
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.RefreshReport();
+            ResumeLayout();
         }
     }
 }
