@@ -8,10 +8,10 @@ using System.Data;
 
 namespace CaffeBar
 {
-    class Service
+    internal class Service
     {
         //  Get items on menu
-        public static List<Tuple<int, String>> getMenuItems(out String errorMessage)
+        internal static List<Tuple<int, String>> getMenuItems(out String errorMessage)
         {
             var list = new List<Tuple<int, String>>();
             var connection = DB.getConnection();
@@ -38,7 +38,7 @@ namespace CaffeBar
         }
 
         //  Get item details for new receipt from STORAGE
-        public static decimal getPrice( in int id, out String errorMessage)
+        internal static decimal getPrice( in int id, out String errorMessage)
         {
             SqlConnection connection = DB.getConnection();
             SqlCommand command = new SqlCommand("SELECT Price FROM dbo.Storage WHERE Id=@id;", connection);
@@ -67,7 +67,7 @@ namespace CaffeBar
         }
 
         //  Insert new receipt
-        public static String newReceipt(  DataTable dataTableReceipt,  String PaymentMethod, out Double total, out Int32 receiptId)
+        internal static String newReceipt(  DataTable dataTableReceipt,  String PaymentMethod, out Double total, out Int32 receiptId)
         {
             String errorMessage = "";
             SqlTransaction transaction = null;
@@ -117,7 +117,7 @@ namespace CaffeBar
         }
 
         //get receipt atributes
-        public static List<String> getReceiptDetails( int receiptID, out String errorMessage)
+        internal static List<String> getReceiptDetails( int receiptID, out String errorMessage)
         {
             SqlConnection connection = DB.getConnection();
             SqlCommand command = new SqlCommand("SELECT * FROM dbo.Receipts WHERE Id=@id;", connection);
@@ -143,8 +143,58 @@ namespace CaffeBar
             {
                 DB.closeConnection();
             }
-            errorMessage = receiptID.ToString();
+            //errorMessage = receiptID.ToString();
             return list;
+        }
+
+        public static List<Tuple<String,String>> getAllEmployeData(out String errorMessage)
+        {
+            SqlConnection connection = DB.getConnection();
+            SqlCommand command = new SqlCommand("SELECT Id, Username FROM [User] WHERE Deleted=@deleted;", connection);
+            errorMessage = "";
+            var list = new List<Tuple<String, String>>();
+
+            command.Parameters.Add("@deleted", SqlDbType.Int);
+            command.Parameters["@deleted"].Value = 0;
+
+            try
+            {
+                SqlDataReader dataReader = command.ExecuteReader();
+                
+                while(dataReader.Read())
+                    list.Add(Tuple.Create(dataReader.GetValue(0).ToString(), dataReader.GetValue(1).ToString()));
+            }
+            catch (Exception ex)
+            {
+                errorMessage = "ERROR: Database error! " + ex.Message;
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+            return list;
+        }
+
+        //  HappyHour
+        internal static bool onHappyHour(in int itemId ,out int price, out String errorMessage) //AKO NIJE I NALAZI SE TU POZAVAT OD TU DELETE
+        {
+            price = 0;
+            errorMessage = "";
+
+            return true;
+        }
+
+        internal static String  removeExpiredFromHappyHour(in int itemId, out String errorMessage)
+        {
+            errorMessage = "";
+
+            return "";
+        }
+        internal static String/*errorMessage*/ addToHappyHour(in int id, out String errorMessage)
+        {
+            errorMessage = "";
+
+            return "";
         }
 
     }

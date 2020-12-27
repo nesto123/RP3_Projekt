@@ -39,6 +39,21 @@ namespace CaffeBar
             dataGridView1.Columns[2].ReadOnly = false;
             dataGridView1.Columns[3].ReadOnly = true;
             comboBoxPaymentMethod.SelectedIndex = 0;
+            comboBoxCustomer.SelectedIndex = 0;
+
+            // add waiter to combobox
+            String errorMessage;
+            var list = Service.getAllEmployeData(out errorMessage);
+            if(errorMessage!="")
+            {
+                MessageBox.Show("ERROR:Database error! " + errorMessage); 
+                ResumeLayout();
+                return;
+            }
+            else
+                foreach (var item in list )
+                    comboBoxCustomer.Items.Add(item.Item2);
+
             ResumeLayout();
         }
         #endregion
@@ -77,6 +92,10 @@ namespace CaffeBar
         private void buttonAddItemToReceipt_Click(object sender, EventArgs e)
         {
             var toadd = ((AddItemButton)sender);
+
+            // CHECK IF ITEM IS ON HAPPY HOUR
+            //....
+            //
 
             //  Check if item is allredy in receipt
             DataRow[] findItem = dataTableReceipt.Select("Id = '" + toadd.Id + "'");

@@ -40,7 +40,7 @@ namespace CaffeBar
         }
         #endregion
 
-        #region MediaSubmenu
+        #region Submenu
         private void buttonMedia_Click(object sender, EventArgs e)
         {
             showSubMenu(panelMediaSubmenu);
@@ -105,16 +105,26 @@ namespace CaffeBar
 
 
         #region Help
-        private void buttonHelp_Click(object sender, EventArgs e)
+
+        private void buttonHelp_Click_1(object sender, EventArgs e)
+        {
+            //--
+            //Kod
+            //--
+            hideSubmenu();
+        }
+        #endregion
+
+        private void buttonAccounts_Click(object sender, EventArgs e)
         {
             //--
             //Kod
             //--
             hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
         }
-        #endregion
 
         private Form activeForm = null;
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -132,6 +142,12 @@ namespace CaffeBar
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void FormApp_Load(object sender, EventArgs e)   //maknut--- kad dode login
+        {
+            User.name = "konobar";
+            User.authorisation = "admin";
         }
     }
 }

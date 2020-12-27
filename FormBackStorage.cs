@@ -34,7 +34,7 @@ namespace CaffeBar
             SqlConnection connection = DB.getConnection();
             DataSet dataset = new DataSet();
 
-            using(SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage", connection))
+            using(SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage WHERE Deleted = 0", connection))
             {
                 adapter.Fill(dataset);//, "Storage");
             }
@@ -86,7 +86,7 @@ namespace CaffeBar
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 SqlConnection connection = DB.getConnection();
-                SqlCommand sqlcommand = new SqlCommand("DELETE FROM dbo.Storage WHERE[Id] = @id", connection);
+                SqlCommand sqlcommand = new SqlCommand("update dbo.Storage set Deleted = 1 where Id =@id", connection);
 
                 sqlcommand.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value.ToString());
 

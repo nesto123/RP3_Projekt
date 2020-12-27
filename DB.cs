@@ -9,12 +9,12 @@ using System.Data;
 namespace CaffeBar
 {
 
-    static class DB
+    internal static class DB
     {
         //public static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True";
-        public static SqlConnection db = null;
+        internal static SqlConnection db = null;
 
-        public static SqlConnection getConnection()
+        internal static SqlConnection getConnection()
         {
             //MessageBox.Show(DB.db == null);
             if ( DB.db == null )
@@ -39,7 +39,7 @@ namespace CaffeBar
             return DB.db;
         }
 
-        public static void closeConnection()
+        internal static void closeConnection()
         {
             if (DB.db.State == ConnectionState.Open)
                 DB.db.Close();

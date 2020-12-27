@@ -32,7 +32,8 @@ namespace CaffeBar
             if (!validateForms())
                 return;
 
-            textBoxChange.Text = (Convert.ToDouble(textBoxPayed.Text) - Convert.ToDouble(textBoxPrice.Text)).ToString();  
+            if (textBoxPayed.Text != "")
+                textBoxChange.Text = (Convert.ToDouble(textBoxPayed.Text) - Convert.ToDouble(textBoxPrice.Text)).ToString();
             //this.Close();
         }
 
@@ -45,17 +46,18 @@ namespace CaffeBar
         private bool validateForms()
         {
             textBoxPrice.Text = textBoxPrice.Text.Replace(",", ".");
-            if (!Regex.Match(textBoxPayed.Text, @"^([0-9]+)$", RegexOptions.IgnoreCase).Success)
+            if (!Regex.Match(textBoxPayed.Text, @"^([0-9]+)$", RegexOptions.IgnoreCase).Success && textBoxPayed.Text !="")
                 return failedValidation("Payed");
             else
                 return true;
         }
 
-
-
-
         #endregion
 
+        private void buttonCancle_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
 
+        }
     }
 }

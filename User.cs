@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CaffeBar
 {
-    static class User
+    internal static class User
     {
+        public static string name;
         public static string authorisation;
     }
 }
