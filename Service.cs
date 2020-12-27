@@ -175,19 +175,46 @@ namespace CaffeBar
             return list;
         }
 
-        //  HappyHour
+        //  HappyHour -- not done
         internal static bool onHappyHour(in int itemId ,out int price, out String errorMessage) //AKO NIJE I NALAZI SE TU POZAVAT OD TU DELETE
         {
-            price = 0;
-            errorMessage = "";
 
-            return true;
+            //SqlConnection connection = DB.getConnection();
+            //SqlCommand command = new SqlCommand("SELECT Id, Username FROM [User] WHERE Deleted=@deleted;", connection);
+            //errorMessage = "";
+            //var list = new List<Tuple<String, String>>();
+
+            //command.Parameters.Add("@deleted", SqlDbType.Int);
+            //command.Parameters["@deleted"].Value = 0;
+
+            //try
+            //{
+            //    SqlDataReader dataReader = command.ExecuteReader();
+
+            //    while (dataReader.Read())
+            //        list.Add(Tuple.Create(dataReader.GetValue(0).ToString(), dataReader.GetValue(1).ToString()));
+            //}
+            //catch (Exception ex)
+            //{
+            //    errorMessage = "ERROR: Database error! " + ex.Message;
+            //}
+            //finally
+            //{
+            //    DB.closeConnection();
+            //}
+            errorMessage = "";
+            price = 0;
+            return false;
+
+            //      Upiti
+            //INSERT INTO dbo.Happyhour(IdItem_FK, From_, Untill, Pastprice)  VALUES(3, '2018-06-23 23:30:20', '2018-06-23 07:30:20', 2)
+
         }
 
         internal static String  removeExpiredFromHappyHour(in int itemId, out String errorMessage)
         {
             errorMessage = "";
-
+            
             return "";
         }
         internal static String/*errorMessage*/ addToHappyHour(in int id, out String errorMessage)
