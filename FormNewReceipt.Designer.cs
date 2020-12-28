@@ -48,12 +48,12 @@ namespace CaffeBar
             this.labelTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanelItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.comboBoxPaymentMethod = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).BeginInit();
@@ -242,6 +242,45 @@ namespace CaffeBar
             this.panel2.Size = new System.Drawing.Size(279, 243);
             this.panel2.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(30, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 19);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Customer:";
+            // 
+            // comboBoxCustomer
+            // 
+            this.comboBoxCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.comboBoxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxCustomer.ForeColor = System.Drawing.Color.Silver;
+            this.comboBoxCustomer.FormattingEnabled = true;
+            this.comboBoxCustomer.Items.AddRange(new object[] {
+            "Regular customer"});
+            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 109);
+            this.comboBoxCustomer.Name = "comboBoxCustomer";
+            this.comboBoxCustomer.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxCustomer.TabIndex = 17;
+            this.comboBoxCustomer.Tag = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(30, 140);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Payment type:";
+            // 
             // comboBoxPaymentMethod
             // 
             this.comboBoxPaymentMethod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -279,45 +318,6 @@ namespace CaffeBar
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(731, 243);
             this.panel4.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 140);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 19);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Payment type:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 19);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Customer:";
-            // 
-            // comboBoxCustomer
-            // 
-            this.comboBoxCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.comboBoxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCustomer.ForeColor = System.Drawing.Color.Silver;
-            this.comboBoxCustomer.FormattingEnabled = true;
-            this.comboBoxCustomer.Items.AddRange(new object[] {
-            "New customer"});
-            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 109);
-            this.comboBoxCustomer.Name = "comboBoxCustomer";
-            this.comboBoxCustomer.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxCustomer.TabIndex = 17;
-            this.comboBoxCustomer.Tag = "";
             // 
             // FormNewReceipt
             // 

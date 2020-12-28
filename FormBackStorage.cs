@@ -13,6 +13,7 @@ namespace CaffeBar
 {
     public partial class FormBackStorage : Form
     {
+        private int previousAmount;
         public FormBackStorage()
         {
             InitializeComponent();
@@ -41,15 +42,14 @@ namespace CaffeBar
 
             var dv = dataset.Tables[0].DefaultView;
             dv.RowFilter = filter;
-            //var newDS = new DataSet();
-            //var newDT = dv.ToTable();
-            //newDS.Tables.Add(newDT);
+            dataGridView1.DataSource = dv;
 
-
-            dataGridView1.DataSource = dv;//dataset.Tables[0];
-            //            dataGridView1.DataMember = "Storage";
-
-
+            // postavljamo da se editati može samo cooler i backstorage
+            dataGridView1.ReadOnly = false;
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[2].ReadOnly = true;
+            dataGridView1.Columns["Deleted"].Visible = false;
 
             DB.closeConnection();
             ResumeLayout();
@@ -116,6 +116,44 @@ namespace CaffeBar
                 UpdateStorageView("Item LIKE '*" + textBoxFilter.Text + "*'");
             else
                 UpdateStorageView();
+        }
+
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            previousAmount = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+            //MessageBox.Show(e.GetType().ToString());
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            String errorMsg;
+            if ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value < previousAmount)// provjera za oba slučaja da nije broj manji
+            {
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = previousAmount;
+                MessageBox.Show(@"# of items lover than before!");
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "Cooler")
+            {
+                if ((int)dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value < (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount)
+                {
+                    dataGridView1[e.ColumnIndex, e.RowIndex].Value = previousAmount;
+                    MessageBox.Show(@"Not enough items!");
+                }
+                else
+                {
+                    Service.addAmount(int.Parse(dataGridView1[0, e.RowIndex].Value.ToString()), (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount, "Cooler", out errorMsg);
+                    if (errorMsg != "")
+                        { MessageBox.Show(errorMsg); return; }
+                    dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value = (int)dataGridView1[e.ColumnIndex+1, e.RowIndex].Value - ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount);
+                }
+            }
+            else //if(dataGridView1.Columns[e.ColumnIndex].HeaderText == "Backstorage")
+            {
+                Service.addAmount(int.Parse(dataGridView1[0, e.RowIndex].Value.ToString()), (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount, "Backstorage", out errorMsg);
+                if (errorMsg != "")
+                    MessageBox.Show(errorMsg);
+            }
+            
         }
     }
 }

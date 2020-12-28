@@ -56,16 +56,6 @@ namespace CaffeBar
 
             ResumeLayout();
         }
-        #endregion
-
-        private void buttonCloseForm_Click(object sender, EventArgs e)
-        {
-            dataTableReceipt.Clear();
-            this.Close();
-        }
-
-        #region Add item to receipt
-        // Add item to receipt - button react function
         private void addItemButtons()
         {
             String errorMessage;
@@ -89,28 +79,63 @@ namespace CaffeBar
                 ResumeLayout();
             }
         }
+        #endregion
+
+        private void buttonCloseForm_Click(object sender, EventArgs e)
+        {
+            dataTableReceipt.Clear();
+            this.Close();
+        }
+
+        #region Add item to receipt
+        // Add item to receipt - button react function
         private void buttonAddItemToReceipt_Click(object sender, EventArgs e)
         {
             var toadd = ((AddItemButton)sender);
+            DataRow[] findItem = dataTableReceipt.Select("Id = '" + toadd.Id + "'");/// treba odvojit količinu i cijenu i gledat u ovisnosti o tenutnoj na računu, u varijablu stavit trenutnu kol. na računu i onda na tu dodat jedan, tako se pokriju svi sl. te na kraju dodat cijenu u ovisnosti ako su na happy houru
+            var currentAmmount = 0;
+            if (findItem.Length != 0)   // curent amount on receipt 
+                currentAmmount = (int)findItem[0]["Amount"];
+
+
+            // CHECK IF THERE IS ENOUGH IN COOLER
+            String errorMessage;
+            var tuple = Service.getPriceCooler(toadd.Id, out errorMessage);
+            var price = tuple.Item2;
+
+            if( errorMessage !="")
+            {
+                MessageBox.Show(errorMessage);
+                return;
+            }
+            if (tuple.Item1 < currentAmmount + 1 ) 
+            {
+                MessageBox.Show("Insufficient amount of " + toadd.Text + "in cooler. Can not add item to receipt!");
+                return;
+            }
+
 
             // CHECK IF ITEM IS ON HAPPY HOUR
-            //....
-            //
+            decimal newPrice;
+            Service.onHappyHour(toadd.Id,out newPrice, out errorMessage);
+            if (errorMessage != "")
+            {
+                MessageBox.Show(errorMessage);
+                return;
+            }
+            if (newPrice.ToString() != "-1")
+                price = newPrice;
 
-            //  Check if item is allredy in receipt
-            DataRow[] findItem = dataTableReceipt.Select("Id = '" + toadd.Id + "'");
-
-            if (findItem.Length != 0)
-                findItem[0]["Amount"] = ((int)findItem[0]["Amount"]) + 1;
-            else
+            if (findItem.Length != 0)// slučaj kada artikl nije vec na racunu
+                findItem[0]["Amount"] = currentAmmount + 1;
+            else// slučaj kada je artikl vec na racunu
             {
                 DataRow newRow = dataTableReceipt.NewRow();
-                String errorMessage;
 
                 newRow["Id"] = toadd.Id;
                 newRow["Item"] = toadd.Item;
-                newRow["Price per unit"] = Service.getPrice(toadd.Id, out errorMessage);
-                newRow["Amount"] = 1;
+                newRow["Price per unit"] = price;
+                newRow["Amount"] = currentAmmount + 1;
 
                 if (errorMessage == "")
                     dataTableReceipt.Rows.Add(newRow);

@@ -15,6 +15,7 @@ Zadatak je predložio tim: {GM, KM, ČM, VF} ⇒ +5 bodova
 ## Requirements:
 - [MS sql server - Express edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 - [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
+- 
 
 # License
 
