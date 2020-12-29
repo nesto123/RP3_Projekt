@@ -31,9 +31,7 @@ namespace CaffeBar
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormApp));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonAccounts = new System.Windows.Forms.Button();
             this.panelPlaylistSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -48,6 +46,9 @@ namespace CaffeBar
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChieldForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonAccounts = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.buttonUser = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelPlaylistSubmenu.SuspendLayout();
             this.panelMediaSubmenu.SuspendLayout();
@@ -61,9 +62,10 @@ namespace CaffeBar
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.buttonUser);
             this.panelSideMenu.Controls.Add(this.buttonHelp);
-            this.panelSideMenu.Controls.Add(this.buttonLogout);
             this.panelSideMenu.Controls.Add(this.buttonAccounts);
+            this.panelSideMenu.Controls.Add(this.buttonLogout);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubmenu);
             this.panelSideMenu.Controls.Add(this.buttonStorage);
             this.panelSideMenu.Controls.Add(this.panelMediaSubmenu);
@@ -74,25 +76,6 @@ namespace CaffeBar
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(215, 544);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonHelp.FlatAppearance.BorderSize = 0;
-            this.buttonHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHelp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHelp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonHelp.Location = new System.Drawing.Point(0, 509);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonHelp.Size = new System.Drawing.Size(198, 45);
-            this.buttonHelp.TabIndex = 7;
-            this.buttonHelp.Text = "Help";
-            this.buttonHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHelp.UseVisualStyleBackColor = true;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click_1);
             // 
             // buttonLogout
             // 
@@ -105,7 +88,7 @@ namespace CaffeBar
             this.buttonLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLogout.Image = global::CaffeBar.Properties.Resources.standby_removebg_preview;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.Location = new System.Drawing.Point(0, 554);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 599);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(198, 45);
@@ -115,25 +98,6 @@ namespace CaffeBar
             this.buttonLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonAccounts
-            // 
-            this.buttonAccounts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonAccounts.FlatAppearance.BorderSize = 0;
-            this.buttonAccounts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonAccounts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAccounts.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAccounts.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonAccounts.Location = new System.Drawing.Point(0, 464);
-            this.buttonAccounts.Name = "buttonAccounts";
-            this.buttonAccounts.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonAccounts.Size = new System.Drawing.Size(198, 45);
-            this.buttonAccounts.TabIndex = 5;
-            this.buttonAccounts.Text = "Accounts";
-            this.buttonAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAccounts.UseVisualStyleBackColor = true;
-            this.buttonAccounts.Click += new System.EventHandler(this.buttonAccounts_Click);
             // 
             // panelPlaylistSubmenu
             // 
@@ -358,6 +322,68 @@ namespace CaffeBar
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonAccounts
+            // 
+            this.buttonAccounts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAccounts.FlatAppearance.BorderSize = 0;
+            this.buttonAccounts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonAccounts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAccounts.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAccounts.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonAccounts.Image = ((System.Drawing.Image)(resources.GetObject("buttonAccounts.Image")));
+            this.buttonAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAccounts.Location = new System.Drawing.Point(0, 464);
+            this.buttonAccounts.Name = "buttonAccounts";
+            this.buttonAccounts.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonAccounts.Size = new System.Drawing.Size(198, 45);
+            this.buttonAccounts.TabIndex = 8;
+            this.buttonAccounts.Text = " Accounts";
+            this.buttonAccounts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAccounts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAccounts.UseVisualStyleBackColor = true;
+            // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHelp.FlatAppearance.BorderSize = 0;
+            this.buttonHelp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHelp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHelp.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHelp.Location = new System.Drawing.Point(0, 509);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonHelp.Size = new System.Drawing.Size(198, 45);
+            this.buttonHelp.TabIndex = 9;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            // 
+            // buttonUser
+            // 
+            this.buttonUser.CausesValidation = false;
+            this.buttonUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonUser.FlatAppearance.BorderSize = 0;
+            this.buttonUser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.buttonUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.buttonUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonUser.ForeColor = System.Drawing.Color.Cornsilk;
+            this.buttonUser.Image = ((System.Drawing.Image)(resources.GetObject("buttonUser.Image")));
+            this.buttonUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUser.Location = new System.Drawing.Point(0, 554);
+            this.buttonUser.Name = "buttonUser";
+            this.buttonUser.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonUser.Size = new System.Drawing.Size(198, 45);
+            this.buttonUser.TabIndex = 11;
+            this.buttonUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonUser.UseVisualStyleBackColor = true;
+            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,11 +424,12 @@ namespace CaffeBar
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button buttonBackStorage;
         private System.Windows.Forms.Button buttonStorage;
-        private System.Windows.Forms.Button buttonAccounts;
         private System.Windows.Forms.Panel panelChieldForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button buttonAccounts;
+        private System.Windows.Forms.Button buttonUser;
     }
 }

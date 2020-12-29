@@ -118,6 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYBJREFUSEvNlDFLAzEYhq/27LWHthUn/4IgOAoiduvawaGgiKOD4A0O4nIIbv4I
+        x8tdenZ2cnXzJzg42KXeXeLgIOqX9kNsyF2TdtAHHpqSvC9HSGL9Dwhvgh2H8jP49cUYZ+bHDtLDBcKG
+        UPolu0RZF5fNCOGeXCrrUnaMq81wSbJjh/xdVSpbD4cbGDOA8L5cVOANpgwg/EkqKTLBlB53Lx+2oqTQ
+        UcYI8VWKIpXlkD9jygCxr4oylWXCYkzps3abrqvKcmxhzAw3yi4VZRNWSXKNy2ejQrITVTGYOCHMzcNq
+        zLagqG8FrOVSvgdjfzl+O6/TrAvjzmiO8E1cbga8P6cQ/jlJ8P+zEvEHGD+WCJs4YU6YHmBME403SLYW
+        ZvuYngI8zYsRH8gFGmre5vHeqgqm2ujxNrYUMMP2/NLDlnyciF0pgrr6WJMPXJxdRVBXzRstzrb+WySO
+        7H2DptuYNmOll7VLATuqRewCivzqeAs9l7yKGy4+pIlL/wLL+gYQXo7bvC+7QAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="buttonAccounts.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAZ1JREFUSEvdUr1OwlAU5gmwDwC0QKEUFGQhLia8gImTi0sHZ+Pgim4mxsFERwdH
+        E/QZ9Am0T4COanurkzN+5/bcpkEM9GcwfsmX295zzved057Cn4UomZowWiOhW1t8lR+EvV4RleYEJlOm
+        w6HskOIl8yUmnp/JTOef4DHo8vs0aHZ3OTU5pHi58azEwG15v9ov4jkyAdNNIiqNx5gIda9xKPzhWSaB
+        +IoqjhhO86sJKCdcGig4iBUrur7dK3IK5dA/CWOGdcbXywFFGnZ+FAkoYhIywbMD0qeTxmA03UJQsq9b
+        dziNuSYhQ3HaMiwEly4GijTfaN3ipA6vRa19ApEjKfaTbmJxr2qPRb2z51vdCyXkkcHsJGk69+qdG5xh
+        53Gxknk+6Q2KkUnZfEosDpKo49fap1IEhOHmm2H1KM6pyUHFczvXrS9OSQ8S522Jd07bMSRyWjpAgLZl
+        jHP2m7uckg1BrX0IsQdsyyULf/jlxr5oru1wSjaIqq2EJSF+z6F8ANEhRANl8G60rjiUL177GwMY0H9I
+        v4r/CIXCNw0UUJ8kL4CTAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIADeAQAAZgAAAICAAAABACAAKAgBAEQCAABAQAAAAQAgAChCAABsCgEAMDAAAAEA

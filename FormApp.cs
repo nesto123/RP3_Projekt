@@ -153,6 +153,7 @@ namespace CaffeBar
             User.authorisation = "admin";
             User.id = 4;
             User.showNotification = true;
+            buttonUser.Text = " " + User.name; 
         }
     }
 }
