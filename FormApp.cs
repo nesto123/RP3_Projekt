@@ -155,5 +155,14 @@ namespace CaffeBar
             User.showNotification = true;
             buttonUser.Text = " " + User.name; 
         }
+
+        private void buttonAccounts_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new FormAccounts());
+            //--
+            //Kod
+            //--
+            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+        }
     }
 }
