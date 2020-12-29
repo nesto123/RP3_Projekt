@@ -13,6 +13,9 @@ using System.Data.SqlClient;
 
 namespace CaffeBar
 {
+    /// <summary>
+    /// Display item from storage form.
+    /// </summary>
     public partial class FormItemStorage : Form
     {
         public FormItemStorage()

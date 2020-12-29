@@ -5,6 +5,9 @@ namespace CaffeBar
 {
     public partial class FormApp : Form
     {
+        /// <summary>
+        /// Main window for application.
+        /// </summary>
         public FormApp()
         {
             InitializeComponent();
@@ -148,6 +151,8 @@ namespace CaffeBar
         {
             User.name = "konobar";
             User.authorisation = "admin";
+            User.id = 4;
+            User.showNotification = true;
         }
     }
 }

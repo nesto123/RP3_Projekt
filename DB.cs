@@ -8,7 +8,9 @@ using System.Data;
 
 namespace CaffeBar
 {
-
+    /// <summary>
+    /// Database comunication class.
+    /// </summary>
     internal static class DB
     {
         //public static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True";
@@ -16,7 +18,6 @@ namespace CaffeBar
 
         internal static SqlConnection getConnection()
         {
-            //MessageBox.Show(DB.db == null);
             if ( DB.db == null )
             {
                 String path = System.IO.Directory.GetCurrentDirectory().Substring(0, System.IO.Directory.GetCurrentDirectory().LastIndexOf(@"\"));

@@ -10,10 +10,15 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace CaffeBar
-{
+{        /// <summary>
+         /// New receipt form.
+         /// </summary>
+
     public partial class FormNewReceipt : Form
     {
         protected DataTable dataTableReceipt;
+        protected double totaldiscount;
+        protected int lineditprevamount;
         public FormNewReceipt()
         {
             InitializeComponent();
@@ -23,6 +28,8 @@ namespace CaffeBar
         private void FormNewReceipt_Load(object sender, EventArgs e)
         {
             SuspendLayout();
+
+            
             //  Initilise bill 
             dataTableReceipt.Columns.Add("Id", Type.GetType("System.Int32"));
             dataTableReceipt.Columns.Add("Item", Type.GetType("System.String"));
@@ -55,6 +62,7 @@ namespace CaffeBar
                     comboBoxCustomer.Items.Add(item.Item2);
 
             ResumeLayout();
+            resetCheck4Notiffications();
         }
         private void addItemButtons()
         {
@@ -77,6 +85,20 @@ namespace CaffeBar
                     flowLayoutPanelItems.Controls.Add(btn);
                 }
                 ResumeLayout();
+            }
+        }
+
+        private void resetCheck4Notiffications()
+        {
+            dataTableReceipt.Rows.Clear();
+            totaldiscount = 0.0;
+
+            // chek for low items
+            DataSet ds =  Service.getItemCount();
+            if( ds.Tables[0].Rows.Count > 0 &&  User.showNotification)
+            {
+                FormLowOnItems formItemcount = new FormLowOnItems(ds);
+                formItemcount.ShowDialog();
             }
         }
         #endregion
@@ -106,12 +128,12 @@ namespace CaffeBar
             if( errorMessage !="")
             {
                 MessageBox.Show(errorMessage);
-                return;
+                return ;
             }
             if (tuple.Item1 < currentAmmount + 1 ) 
             {
                 MessageBox.Show("Insufficient amount of " + toadd.Text + "in cooler. Can not add item to receipt!");
-                return;
+                return ;
             }
 
 
@@ -121,7 +143,7 @@ namespace CaffeBar
             if (errorMessage != "")
             {
                 MessageBox.Show(errorMessage);
-                return;
+                return ;
             }
             if (newPrice.ToString() != "-1")
                 price = newPrice;
@@ -142,15 +164,47 @@ namespace CaffeBar
                 else
                     MessageBox.Show(errorMessage);
             }
+            return ;
+        }
+        #endregion
+
+        #region Edit quantity of items on receipt
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+            AddItemButton btn = new AddItemButton();
+            btn.Name = dataGridView1[1, e.RowIndex].Value.ToString();
+            btn.Id = (int)dataGridView1[0, e.RowIndex].Value;
+            btn.Text = dataGridView1[1, e.RowIndex].Value.ToString();
+            btn.Item = dataGridView1[1, e.RowIndex].Value.ToString();
+            int new_val = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value, fail_flag;
+            dataGridView1[e.ColumnIndex, e.RowIndex].Value = fail_flag = lineditprevamount;
+
+            for (int i = 0; i < new_val; i++)
+            {
+                buttonAddItemToReceipt_Click(btn, EventArgs.Empty);
+                if ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value == fail_flag)
+                    break;
+                else
+                    fail_flag = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+            }
+
+        }
+
+        private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            lineditprevamount = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
         }
         #endregion
 
         #region Print receipt
         private void buttonPrint_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
             if( dataTableReceipt.Rows.Count == 0)
             {
                 MessageBox.Show("No items added!");
+                ResumeLayout();
                 return;
             }
 
@@ -158,27 +212,34 @@ namespace CaffeBar
             Double total;
             String errorMessage;
             Int32 receiptId;
-            errorMessage = Service.newReceipt(dataTableReceipt, comboBoxPaymentMethod.SelectedItem.ToString(), out total, out receiptId);
+  ///////////////////////////////////////////////////////////////////////////za zaposlenike
+            if(comboBoxCustomer.SelectedIndex > 0 )
+                addDiscount(comboBoxCustomer.SelectedItem.ToString());
+
+
+            errorMessage = Service.newReceipt(dataTableReceipt, comboBoxPaymentMethod.SelectedItem.ToString(), out total, out receiptId, totaldiscount);
 
             if (errorMessage != "")
             {
-                MessageBox.Show(errorMessage);
+                MessageBox.Show(errorMessage); 
+                ResumeLayout();
                 return;
             }
             // print
-            FormReceiptPrint formPrint = new FormReceiptPrint(dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId);
+            FormReceiptPrint formPrint = new FormReceiptPrint(dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId, totaldiscount.ToString());
             formPrint.ShowDialog();
 
             //check if payed cash - print combo 
             if (comboBoxPaymentMethod.SelectedItem.ToString() == "Gotovina")
             {
                 FormChange formChange = new FormChange(in total);
+                ResumeLayout();
                 formChange.ShowDialog();
             }
-            dataTableReceipt.Rows.Clear();
+            ResumeLayout();
+            resetCheck4Notiffications();
         }
         #endregion
-
 
         #region Delete item from receipt
         private void buttonDeleteItem_Click(object sender, EventArgs e)
@@ -193,9 +254,6 @@ namespace CaffeBar
         }
 
         #endregion
-
-
-
 
         #region New button with properties |id,item |
         class AddItemButton : Button
@@ -218,7 +276,80 @@ namespace CaffeBar
         }
         #endregion
 
+        #region Free stuff for staff
+        private void addDiscount( string employe)/// možda doradit
+        {
+            // get today discount count on juice and coffee for employee ->name 
+            string errorMessage;
+            Tuple<int, int> discount =  Service.getDiscount(comboBoxCustomer.SelectedItem.ToString(), out errorMessage);
+            if( errorMessage !="")
+                { MessageBox.Show(errorMessage);return; }
 
 
+            //for
+            // if caffe: has free caffe if not get him 20% disc
+            // if juice: has free juice if not get him 20% disc
+            int freeAmount = 0;
+            DataTable tmp = new DataTable();
+            tmp = dataTableReceipt.Clone();
+            foreach (DataRow row in dataTableReceipt.Rows)
+            {
+                if(row["item"].ToString().IndexOf("Caffe", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
+                {
+                    if(discount.Item1 > 0)
+                    {
+                        freeAmount = ((int)row["Amount"]) == 1 ? 1 : discount.Item1;
+                        Service.useDiscount(employe,out errorMessage, "Caffe", freeAmount);
+                        if (errorMessage != "")
+                            { MessageBox.Show(errorMessage); return; }
+                        if((int)row["Amount"]>freeAmount)// dodaj ostatak na kraj
+                        {
+                            row["Amount"] = (int)row["Amount"] - freeAmount;
+                            tmp.ImportRow(row);
+                            row["Amount"] =  freeAmount;
+                            row["Price per unit"] = decimal.Parse("0");
+                        }
+                        else
+                        {
+                            row["Price per unit"] = 0.0;
+                        }
+
+                    }
+                }
+                else if (row["item"].ToString().IndexOf("Juice", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
+                {
+                    if (discount.Item2 > 0)
+                    {
+                        Service.useDiscount(employe, out errorMessage, "Juice", 1);
+                        if (errorMessage != "")
+                        { MessageBox.Show(errorMessage); return; }
+                        if ((int)row["Amount"] > 1)// dodaj ostatak na kraj
+                        {
+                            row["Amount"] = (int)row["Amount"] - 1;
+                            tmp.ImportRow(row);
+                            row["Amount"] = 1;
+                            row["Price per unit"] = decimal.Parse("0");
+                        }
+                        else
+                        {
+                            row["Price per unit"] = 0.0;
+
+                        }
+
+                    }
+                }
+            }
+
+            if(tmp.Rows.Count > 0)
+                dataTableReceipt.Merge(tmp);
+            
+            
+            // add 20% off everything
+            totaldiscount = 20;
+        }
+
+        #endregion
+
+        
     }
 }

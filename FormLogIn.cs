@@ -12,7 +12,9 @@ using System.Data.SqlClient;
 
 namespace CaffeBar
 {
-
+    /// <summary>
+    /// The entry point for the application - login.
+    /// </summary>
     public partial class FormLogIn : Form
     {
         public FormLogIn()
@@ -91,6 +93,10 @@ namespace CaffeBar
                 MessageBox.Show("Invalid credentials!");
         }
 
+        private void FormLogIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

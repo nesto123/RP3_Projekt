@@ -40,7 +40,7 @@ namespace CaffeBar
             this.storageTableAdapter = new CaffeBar.CaffeBarDatabaseDataSetTableAdapters.StorageTableAdapter();
             this.storageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDeleteItem = new System.Windows.Forms.Button();
-            this.buttonEditItem = new System.Windows.Forms.Button();
+            this.buttonCloseRegister = new System.Windows.Forms.Button();
             this.buttonCloseForm = new System.Windows.Forms.Button();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.caffeBarDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,6 +48,8 @@ namespace CaffeBar
             this.labelTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanelItems = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxDiscount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -100,6 +102,8 @@ namespace CaffeBar
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(721, 243);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // buttonPrint
             // 
@@ -111,9 +115,9 @@ namespace CaffeBar
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.ForeColor = System.Drawing.Color.Silver;
             this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPrint.Location = new System.Drawing.Point(167, 201);
+            this.buttonPrint.Location = new System.Drawing.Point(34, 171);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(100, 30);
+            this.buttonPrint.Size = new System.Drawing.Size(233, 60);
             this.buttonPrint.TabIndex = 3;
             this.buttonPrint.Text = "Print receipt";
             this.buttonPrint.UseVisualStyleBackColor = false;
@@ -152,7 +156,7 @@ namespace CaffeBar
             this.buttonDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeleteItem.Location = new System.Drawing.Point(167, 165);
+            this.buttonDeleteItem.Location = new System.Drawing.Point(167, 127);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
             this.buttonDeleteItem.Size = new System.Drawing.Size(100, 30);
             this.buttonDeleteItem.TabIndex = 5;
@@ -160,22 +164,22 @@ namespace CaffeBar
             this.buttonDeleteItem.UseVisualStyleBackColor = false;
             this.buttonDeleteItem.Click += new System.EventHandler(this.buttonDeleteItem_Click);
             // 
-            // buttonEditItem
+            // buttonCloseRegister
             // 
-            this.buttonEditItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonEditItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.buttonEditItem.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.buttonEditItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonEditItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.buttonEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEditItem.ForeColor = System.Drawing.Color.Silver;
-            this.buttonEditItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditItem.Location = new System.Drawing.Point(41, 201);
-            this.buttonEditItem.Name = "buttonEditItem";
-            this.buttonEditItem.Size = new System.Drawing.Size(100, 30);
-            this.buttonEditItem.TabIndex = 6;
-            this.buttonEditItem.Text = "Jos nista ne radi";
-            this.buttonEditItem.UseVisualStyleBackColor = false;
+            this.buttonCloseRegister.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCloseRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonCloseRegister.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonCloseRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.buttonCloseRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.buttonCloseRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseRegister.ForeColor = System.Drawing.Color.Silver;
+            this.buttonCloseRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCloseRegister.Location = new System.Drawing.Point(34, 127);
+            this.buttonCloseRegister.Name = "buttonCloseRegister";
+            this.buttonCloseRegister.Size = new System.Drawing.Size(116, 30);
+            this.buttonCloseRegister.TabIndex = 6;
+            this.buttonCloseRegister.Text = "Close register";
+            this.buttonCloseRegister.UseVisualStyleBackColor = false;
             // 
             // buttonCloseForm
             // 
@@ -229,11 +233,13 @@ namespace CaffeBar
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxDiscount);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.comboBoxCustomer);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.comboBoxPaymentMethod);
-            this.panel2.Controls.Add(this.buttonEditItem);
+            this.panel2.Controls.Add(this.buttonCloseRegister);
             this.panel2.Controls.Add(this.buttonPrint);
             this.panel2.Controls.Add(this.buttonDeleteItem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -242,12 +248,31 @@ namespace CaffeBar
             this.panel2.Size = new System.Drawing.Size(279, 243);
             this.panel2.TabIndex = 10;
             // 
+            // textBoxDiscount
+            // 
+            this.textBoxDiscount.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxDiscount.Location = new System.Drawing.Point(167, 40);
+            this.textBoxDiscount.Name = "textBoxDiscount";
+            this.textBoxDiscount.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDiscount.TabIndex = 20;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(30, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Discount:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 111);
+            this.label1.Location = new System.Drawing.Point(30, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 19);
             this.label1.TabIndex = 18;
@@ -258,13 +283,12 @@ namespace CaffeBar
             this.comboBoxCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.comboBoxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCustomer.ForeColor = System.Drawing.Color.Silver;
             this.comboBoxCustomer.FormattingEnabled = true;
             this.comboBoxCustomer.Items.AddRange(new object[] {
             "Regular customer"});
-            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 109);
+            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 71);
             this.comboBoxCustomer.Name = "comboBoxCustomer";
             this.comboBoxCustomer.Size = new System.Drawing.Size(100, 21);
             this.comboBoxCustomer.TabIndex = 17;
@@ -275,7 +299,7 @@ namespace CaffeBar
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 140);
+            this.label5.Location = new System.Drawing.Point(30, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 19);
             this.label5.TabIndex = 16;
@@ -293,7 +317,7 @@ namespace CaffeBar
             this.comboBoxPaymentMethod.Items.AddRange(new object[] {
             "Gotovina",
             "Kartica"});
-            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(167, 138);
+            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(167, 100);
             this.comboBoxPaymentMethod.Name = "comboBoxPaymentMethod";
             this.comboBoxPaymentMethod.Size = new System.Drawing.Size(100, 21);
             this.comboBoxPaymentMethod.TabIndex = 7;
@@ -359,7 +383,7 @@ namespace CaffeBar
         private CaffeBarDatabaseDataSetTableAdapters.StorageTableAdapter storageTableAdapter;
         private System.Windows.Forms.BindingSource storageBindingSource1;
         private System.Windows.Forms.Button buttonDeleteItem;
-        private System.Windows.Forms.Button buttonEditItem;
+        private System.Windows.Forms.Button buttonCloseRegister;
         private System.Windows.Forms.Button buttonCloseForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelItems;
@@ -371,5 +395,7 @@ namespace CaffeBar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCustomer;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxDiscount;
+        private System.Windows.Forms.Label label2;
     }
 }

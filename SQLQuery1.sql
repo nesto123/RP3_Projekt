@@ -1,1 +1,1 @@
-﻿select IdItem_FK, From_, Untill, Pastprice from Happyhour Where IdItem_FK = 2
+﻿SELECT Item, Cooler, Backstorage FROM Storage WHERE (Cooler < 5) OR Backstorage < 10 ORDER BY Cooler 

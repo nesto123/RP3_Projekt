@@ -41,20 +41,21 @@ namespace CaffeBar
             this.storageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDeleteItem = new System.Windows.Forms.Button();
             this.buttonEditItem = new System.Windows.Forms.Button();
-            this.buttonCloseFormStorage = new System.Windows.Forms.Button();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.caffeBarDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonCloseFormStorage = new System.Windows.Forms.Button();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.caffeBarDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonShowNotification = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -109,7 +110,7 @@ namespace CaffeBar
             this.buttonAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddItem.Location = new System.Drawing.Point(619, 91);
             this.buttonAddItem.Name = "buttonAddItem";
-            this.buttonAddItem.Size = new System.Drawing.Size(100, 30);
+            this.buttonAddItem.Size = new System.Drawing.Size(102, 30);
             this.buttonAddItem.TabIndex = 3;
             this.buttonAddItem.Text = "Add item";
             this.buttonAddItem.UseVisualStyleBackColor = false;
@@ -150,7 +151,7 @@ namespace CaffeBar
             this.buttonDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDeleteItem.Location = new System.Drawing.Point(619, 163);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
-            this.buttonDeleteItem.Size = new System.Drawing.Size(100, 30);
+            this.buttonDeleteItem.Size = new System.Drawing.Size(102, 30);
             this.buttonDeleteItem.TabIndex = 5;
             this.buttonDeleteItem.Text = "Delete item";
             this.buttonDeleteItem.UseVisualStyleBackColor = false;
@@ -168,29 +169,11 @@ namespace CaffeBar
             this.buttonEditItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEditItem.Location = new System.Drawing.Point(619, 127);
             this.buttonEditItem.Name = "buttonEditItem";
-            this.buttonEditItem.Size = new System.Drawing.Size(100, 30);
+            this.buttonEditItem.Size = new System.Drawing.Size(102, 30);
             this.buttonEditItem.TabIndex = 6;
             this.buttonEditItem.Text = "Edit item";
             this.buttonEditItem.UseVisualStyleBackColor = false;
             this.buttonEditItem.Click += new System.EventHandler(this.buttonEditItem_Click);
-            // 
-            // buttonCloseFormStorage
-            // 
-            this.buttonCloseFormStorage.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonCloseFormStorage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.buttonCloseFormStorage.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.buttonCloseFormStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonCloseFormStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.buttonCloseFormStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCloseFormStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCloseFormStorage.ForeColor = System.Drawing.Color.Red;
-            this.buttonCloseFormStorage.Image = global::CaffeBar.Properties.Resources.close_removebg_preview;
-            this.buttonCloseFormStorage.Location = new System.Drawing.Point(693, 9);
-            this.buttonCloseFormStorage.Name = "buttonCloseFormStorage";
-            this.buttonCloseFormStorage.Size = new System.Drawing.Size(26, 26);
-            this.buttonCloseFormStorage.TabIndex = 7;
-            this.buttonCloseFormStorage.UseVisualStyleBackColor = false;
-            this.buttonCloseFormStorage.Click += new System.EventHandler(this.button4_Click);
             // 
             // textBoxFilter
             // 
@@ -233,12 +216,49 @@ namespace CaffeBar
             this.labelTitle.TabIndex = 11;
             this.labelTitle.Text = "Storage";
             // 
+            // buttonCloseFormStorage
+            // 
+            this.buttonCloseFormStorage.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonCloseFormStorage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonCloseFormStorage.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonCloseFormStorage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.buttonCloseFormStorage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.buttonCloseFormStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseFormStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCloseFormStorage.ForeColor = System.Drawing.Color.Red;
+            this.buttonCloseFormStorage.Image = global::CaffeBar.Properties.Resources.close_removebg_preview;
+            this.buttonCloseFormStorage.Location = new System.Drawing.Point(693, 9);
+            this.buttonCloseFormStorage.Name = "buttonCloseFormStorage";
+            this.buttonCloseFormStorage.Size = new System.Drawing.Size(26, 26);
+            this.buttonCloseFormStorage.TabIndex = 7;
+            this.buttonCloseFormStorage.UseVisualStyleBackColor = false;
+            this.buttonCloseFormStorage.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // buttonShowNotification
+            // 
+            this.buttonShowNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonShowNotification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonShowNotification.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonShowNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.buttonShowNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.buttonShowNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShowNotification.ForeColor = System.Drawing.Color.Silver;
+            this.buttonShowNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonShowNotification.Location = new System.Drawing.Point(619, 199);
+            this.buttonShowNotification.Name = "buttonShowNotification";
+            this.buttonShowNotification.Size = new System.Drawing.Size(102, 30);
+            this.buttonShowNotification.TabIndex = 11;
+            this.buttonShowNotification.Text = "Show notiffication";
+            this.buttonShowNotification.UseVisualStyleBackColor = false;
+            this.buttonShowNotification.Click += new System.EventHandler(this.buttonShowNotification_Click);
+            // 
             // FormBackStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(731, 433);
+            this.Controls.Add(this.buttonShowNotification);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxFilter);
@@ -253,10 +273,10 @@ namespace CaffeBar
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +300,6 @@ namespace CaffeBar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Button buttonShowNotification;
     }
 }

@@ -13,6 +13,9 @@ using System.Data.SqlClient;
 
 namespace CaffeBar
 {
+    /// <summary>
+    /// Display change form, used when payed with cash.
+    /// </summary>
     public partial class FormChange : Form
     {
         double _total;

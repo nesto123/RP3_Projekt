@@ -8,6 +8,9 @@ using System.Data;
 
 namespace CaffeBar
 {
+    /// <summary>
+    /// Database comunication implementation class.
+    /// </summary>
     internal class Service
     {
         //  Get items on menu
@@ -16,7 +19,6 @@ namespace CaffeBar
             var list = new List<Tuple<int, String>>();
             var connection = DB.getConnection();
             var command = new SqlCommand("SELECT Id, Item FROM dbo.Storage", connection);
-
             errorMessage = "";
 
             try
@@ -65,7 +67,7 @@ namespace CaffeBar
         }
 
         //  Insert new receipt
-        internal static String newReceipt(  DataTable dataTableReceipt,  String PaymentMethod, out Double total, out Int32 receiptId)
+        internal static String newReceipt(  DataTable dataTableReceipt,  String PaymentMethod, out Double total, out Int32 receiptId, double discount)
         {
             String errorMessage = "";
             SqlTransaction transaction = null;
@@ -79,20 +81,28 @@ namespace CaffeBar
                 total += amount * price;
             }
 
+            //total = (discount > 0.00) ? ((Double)Math.Round( total * (Double)discount / (Double)100, 2)) : total;
+            if (discount != 0.0)
+                total = Math.Round((100 - discount) / 100 * total, 2);
+
             SqlConnection connection = DB.getConnection();
 
-            SqlCommand command = new SqlCommand("INSERT INTO dbo.Receipts(Total,Payment_method) output INSERTED.ID VALUES(@total,@payment_method)", connection);
+            SqlCommand command = new SqlCommand("INSERT INTO dbo.Receipts(Total,Payment_method, Discount,Waiter_id) output INSERTED.ID VALUES(@total,@payment_method,@discount,@waiter_id)", connection);
             SqlCommand command2 = new SqlCommand("INSERT INTO dbo.Receipts_item(Id_ItemFK,Id_receiptFK,Amount,Price) VALUES(@id_ItemFK,@id_receiptFK,@amount,@price)", connection);
             SqlCommand command3 = new SqlCommand("UPDATE dbo.Storage SET Cooler = Cooler - @times WHERE Id=@id", connection);
 
-
-            command.Parameters.AddWithValue("@total", total);
+            command.Parameters.Add("@total", SqlDbType.Decimal);
+            command.Parameters["@total"].Value =    decimal.Parse( total.ToString());
             command.Parameters.AddWithValue("@payment_method", PaymentMethod);
+            command.Parameters.AddWithValue("@discount", decimal.Parse(Math.Round(discount,2).ToString()));
+            command.Parameters.AddWithValue("@waiter_id", User.id);
+
             command3.Parameters.Add("@id", SqlDbType.Int);
             command3.Parameters.Add("@times", SqlDbType.Int);
 
             try
             {
+
                 SqlDataReader reader =  command.ExecuteReader();
                 reader.Read();
                 receiptId = reader.GetInt32(0);
@@ -104,17 +114,17 @@ namespace CaffeBar
                     command2.Parameters.AddWithValue("@amount", item["Amount"]);
                     command2.Parameters.AddWithValue("@price", item["Price per unit"]);
                     command3.Parameters["@id"].Value = int.Parse(item["id"].ToString());
-                    command3.Parameters["@times"].Value= int.Parse(item["Amount"].ToString());
+                    command3.Parameters["@times"].Value = int.Parse(item["Amount"].ToString());
                     command2.ExecuteNonQuery();
                     command3.ExecuteNonQuery();
                     command2.Parameters.Clear();
-                    
+
                     //errorMessage = int.Parse(item["Amount"].ToString()).ToString()+" i="+ item["Id"].ToString();
                 }
             }
             catch (Exception ex)
             {
-                errorMessage = "ERROR: Database error! " + ex.Message;
+                errorMessage = discount.ToString()+"ERROR: Database error! " + ex.Message;
             }
             finally
             {
@@ -130,7 +140,6 @@ namespace CaffeBar
             SqlCommand command = new SqlCommand("SELECT * FROM dbo.Receipts WHERE Id=@id;", connection);
             errorMessage = "";
             var list = new List<String>();
-
             command.Parameters.Add("@id", SqlDbType.Int);
             command.Parameters["@id"].Value = receiptID;
             
@@ -138,7 +147,6 @@ namespace CaffeBar
             {
                 SqlDataReader dataReader = command.ExecuteReader();
                 dataReader.Read();
-                
                 for (var i = 0; i < 5; ++i)
                     list.Add(dataReader.GetValue(i).ToString());
             }
@@ -159,7 +167,6 @@ namespace CaffeBar
             SqlCommand command = new SqlCommand("SELECT Id, Username FROM [User] WHERE Deleted=@deleted;", connection);
             errorMessage = "";
             var list = new List<Tuple<String, String>>();
-
             command.Parameters.Add("@deleted", SqlDbType.Int);
             command.Parameters["@deleted"].Value = 0;
 
@@ -181,6 +188,7 @@ namespace CaffeBar
             return list;
         }
 
+        #region HappyHour
         //  HappyHour -- not done -- testirat
         internal static bool onHappyHour(in int itemId ,out decimal newPrice,  out String errorMessage) //AKO NIJE I NALAZI SE TU POZAVAT OD TU DELETE
         {
@@ -188,7 +196,6 @@ namespace CaffeBar
             SqlConnection connection = DB.getConnection();
             SqlCommand command = new SqlCommand("select IdItem_FK, From_, Untill, Pastprice from Happyhour Where IdItem_FK = @idItem", connection);
             var onSale = false;
-
             errorMessage = ""; newPrice = decimal.Parse("-1");
             command.Parameters.AddWithValue("@idItem", itemId);
 
@@ -230,7 +237,6 @@ namespace CaffeBar
         {
             SqlConnection connection = DB.getConnection();
             SqlCommand command3 = new SqlCommand("Delete from Happyhour WHERE IdItem_FK = @idItem", connection);
-
             errorMessage = "";
             command3.Parameters.AddWithValue("@idItem", itemId);
 
@@ -248,7 +254,7 @@ namespace CaffeBar
             }
             return;          
         }
-        // not done -- not tested
+//->     // not done -- not tested
         internal static String/*errorMessage*/ addToHappyHour(in int itemId, in String from_, in String untill) // dodat još provjeru je li artikl već na akciji pa onemogućit to
         {
             SqlConnection connection = DB.getConnection();
@@ -290,8 +296,9 @@ namespace CaffeBar
             }
             return errorMessage;
         }
+        #endregion
 
-        ////////////////////////////
+        #region Move to & from Cooler and Backstorage
         // add amount to 
         internal static void addAmount(int id, int addAmount,string column, out String errorMessage)
         {
@@ -319,7 +326,90 @@ namespace CaffeBar
                 DB.closeConnection();
             }
         }
+        #endregion
+
+        #region Discount for employes
+        internal static Tuple<int, int> getDiscount(string employes, out string errorMessage)
+        {
+            SqlConnection connection = DB.getConnection();
+            SqlCommand command2 = new SqlCommand("SELECT Caffe, Juice, State_on_date FROM [User] WHERE Username=@username;", connection);
+            SqlCommand command1 = new SqlCommand("UPDATE [User] SET [Caffe] = 2, [Juice] = 1  WHERE Username=@username;", connection);
+            Tuple<int,int> tuple;
+            errorMessage = "";
+            command2.Parameters.AddWithValue("@username", employes);
+            command1.Parameters.AddWithValue("@username", employes);
+
+            try
+            {
+                SqlDataReader dataReader = command2.ExecuteReader();
+                dataReader.Read();
+                if (dataReader.GetDateTime(2).Date != DateTime.Now.Date)
+                {
+                    dataReader.Close();
+                    command1.ExecuteNonQuery();
+                    tuple = Tuple.Create(2,1);
+                }
+                else
+                {
+                    tuple = Tuple.Create(dataReader.GetInt32(0), dataReader.GetInt32(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage += "ERROR: Database error! " + ex.Message;
+                tuple = Tuple.Create(-2, -1);
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+            return tuple;
+        }
+
+        internal static void useDiscount(string employes, out string errorMessage, string item, int times)
+        {
+            SqlConnection connection = DB.getConnection();
+            SqlCommand caffe = new SqlCommand("UPDATE [User] SET [Caffe] = [Caffe] - @times  WHERE Username=@username;", connection);
+            SqlCommand juice = new SqlCommand("UPDATE [User] SET [Juice] = 0  WHERE Username=@username;", connection);
+            errorMessage = "";
+
+            caffe.Parameters.AddWithValue("@username", employes);
+            caffe.Parameters.AddWithValue("@times", times);
+            juice.Parameters.AddWithValue("@username", employes);
 
 
+            try
+            {
+                if (item == "Caffe")
+                    caffe.ExecuteNonQuery();
+                else if (item == "Juice")
+                    juice.ExecuteNonQuery();                    
+            }
+            catch (Exception ex)
+            {
+                errorMessage += "ERROR: Database error! " + ex.Message;
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+            return ;
+        }
+        #endregion
+
+
+        #region Notifications for low item count
+        internal static DataSet getItemCount()
+        {
+            SqlConnection connection = DB.getConnection();
+            DataSet dataset = new DataSet();
+
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Item, Cooler, Backstorage FROM Storage WHERE Cooler < 5 OR Backstorage < 10 ORDER BY Cooler ", connection))
+            {
+                adapter.Fill(dataset);//, "Storage");
+            }
+            return dataset;
+        }
+        #endregion
     }
 }

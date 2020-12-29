@@ -11,6 +11,9 @@ using System.Data.SqlClient;
 
 namespace CaffeBar
 {
+    /// <summary>
+    /// Sorage display form.
+    /// </summary>
     public partial class FormBackStorage : Form
     {
         private int previousAmount;
@@ -55,6 +58,7 @@ namespace CaffeBar
             ResumeLayout();
         }
 
+        #region Add, Edit, Delete, Filter item
         private void buttonNewItem_Click(object sender, EventArgs e)
         {
             FormItemStorage formItem = new FormItemStorage();
@@ -106,8 +110,6 @@ namespace CaffeBar
             }
             else
                 MessageBox.Show("Please select a row!");
-
-
         }
 
         private void textBoxFilter_TextChanged(object sender, EventArgs e)
@@ -117,11 +119,12 @@ namespace CaffeBar
             else
                 UpdateStorageView();
         }
+        #endregion
 
+        #region Line edit implementation
         private void dataGridView1_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             previousAmount = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
-            //MessageBox.Show(e.GetType().ToString());
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -153,7 +156,13 @@ namespace CaffeBar
                 if (errorMsg != "")
                     MessageBox.Show(errorMsg);
             }
-            
+        }
+
+        #endregion
+
+        private void buttonShowNotification_Click(object sender, EventArgs e)
+        {
+            User.showNotification = true;
         }
     }
 }

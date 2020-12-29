@@ -10,17 +10,21 @@ using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 namespace CaffeBar
 {
+    /// <summary>
+    /// Print receipt form.
+    /// </summary>
     public partial class FormReceiptPrint : Form
     {
-        String _total, _paymentMethod, _receiptId, _date;
+        String _total, _paymentMethod, _receiptId, _date, _discount;
         DataTable items;
-        public FormReceiptPrint( DataTable dataTableReceipt,Double total, String paymentMethod,Int32 receiptId)
+        public FormReceiptPrint( DataTable dataTableReceipt,Double total, String paymentMethod,Int32 receiptId, String discount)
         {
             InitializeComponent();
             _total = total.ToString();
             _paymentMethod = paymentMethod.ToString();
             _receiptId = receiptId.ToString();
-            items =new DataTable( );
+            _discount = discount;
+            items = new DataTable( );
             items = dataTableReceipt.Copy();
 
         }
@@ -40,8 +44,8 @@ namespace CaffeBar
             //popravit!!!!!!!!!!!!!!!!!!!!!!
             String errorMsg;
             _date = Service.getReceiptDetails((Int32.Parse(_receiptId)), out errorMsg)[1];
-            //MessageBox.Show( + errorMsg);
-            
+            if(errorMsg!="")
+                { MessageBox.Show(errorMsg); ResumeLayout(); return; }
 
             ReportDataSource rds = new ReportDataSource("DataSet2", items);
             this.reportViewer1.LocalReport.DataSources.Clear();
@@ -51,9 +55,10 @@ namespace CaffeBar
             {
                 new ReportParameter("parameterTotal",_total),
                 new ReportParameter("parameterDate", _date),
-                new ReportParameter("parameterDiscount", "0"),
+                new ReportParameter("parameterDiscount", _discount),
                 new ReportParameter("parameterId", _receiptId),
                 new ReportParameter("parameterPaymentMethod", _paymentMethod),
+                new ReportParameter("paremeterIzdao", User.name),
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.RefreshReport();
