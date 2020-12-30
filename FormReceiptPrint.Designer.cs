@@ -50,6 +50,7 @@ namespace CaffeBar
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormReceiptPrint";
             this.Text = "Print receipt";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormReceiptPrint_FormClosed);
             this.Load += new System.EventHandler(this.FormReceiptPrint_Load);
             this.ResumeLayout(false);
 

@@ -16,8 +16,8 @@ namespace CaffeBar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormLogIn());
-            Application.Run(new FormApp());
+            Application.Run(new FormLogIn());
+            //Application.Run(new FormApp());
 
         }
     }

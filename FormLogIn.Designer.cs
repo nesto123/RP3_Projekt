@@ -92,7 +92,6 @@ namespace CaffeBar
             this.textBoxPassword.Size = new System.Drawing.Size(162, 15);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.Enter += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonLogin
             // 
@@ -136,7 +135,6 @@ namespace CaffeBar
             this.Name = "FormLogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login to caffe bar";
-            this.Load += new System.EventHandler(this.FormLogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

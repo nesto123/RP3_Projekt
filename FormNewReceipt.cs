@@ -62,7 +62,7 @@ namespace CaffeBar
                     comboBoxCustomer.Items.Add(item.Item2);
 
             ResumeLayout();
-            resetCheck4Notiffications();
+            //resetCheck4Notiffications();
         }
         private void addItemButtons()
         {
@@ -226,7 +226,7 @@ namespace CaffeBar
                 return;
             }
             // print
-            FormReceiptPrint formPrint = new FormReceiptPrint(dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId, totaldiscount.ToString());
+            FormReceiptPrint formPrint = new FormReceiptPrint("receipt",dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId, totaldiscount.ToString());
             formPrint.ShowDialog();
 
             //check if payed cash - print combo 
@@ -348,8 +348,13 @@ namespace CaffeBar
             totaldiscount = 20;
         }
 
+
         #endregion
 
-        
+        private void buttonCloseRegister_Click(object sender, EventArgs e)
+        {
+            FormReceiptPrint formPrint = new FormReceiptPrint("report");
+            formPrint.ShowDialog();
+        }
     }
 }

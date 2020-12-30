@@ -1,7 +1,7 @@
 ﻿
 namespace CaffeBar
 {
-    partial class FormConsumption
+    partial class FormAddToHappyHour
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,8 @@ namespace CaffeBar
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonAddItem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
@@ -44,11 +42,9 @@ namespace CaffeBar
             this.caffeBarDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.caffeBarDatabaseDataSet = new CaffeBar.CaffeBarDatabaseDataSet();
             this.userTableAdapter = new CaffeBar.CaffeBarDatabaseDataSetTableAdapters.UserTableAdapter();
@@ -58,11 +54,6 @@ namespace CaffeBar
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource1)).BeginInit();
@@ -72,6 +63,9 @@ namespace CaffeBar
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -86,10 +80,10 @@ namespace CaffeBar
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 91);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -101,19 +95,37 @@ namespace CaffeBar
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(434, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(601, 330);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // buttonAddItem
+            // 
+            this.buttonAddItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonAddItem.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonAddItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.buttonAddItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.buttonAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddItem.ForeColor = System.Drawing.Color.Silver;
+            this.buttonAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddItem.Location = new System.Drawing.Point(619, 91);
+            this.buttonAddItem.Name = "buttonAddItem";
+            this.buttonAddItem.Size = new System.Drawing.Size(102, 30);
+            this.buttonAddItem.TabIndex = 3;
+            this.buttonAddItem.Text = "Add item";
+            this.buttonAddItem.UseVisualStyleBackColor = false;
+            this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Location = new System.Drawing.Point(12, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Filter:";
+            this.label1.Text = "From:";
             // 
             // panel1
             // 
@@ -133,9 +145,9 @@ namespace CaffeBar
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(12, 3);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(174, 30);
+            this.labelTitle.Size = new System.Drawing.Size(150, 30);
             this.labelTitle.TabIndex = 11;
-            this.labelTitle.Text = "Consumption";
+            this.labelTitle.Text = "Happy hour";
             // 
             // buttonCloseFormStorage
             // 
@@ -157,79 +169,48 @@ namespace CaffeBar
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(74, 12);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(61, 57);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(130, 20);
-            this.dateTimePickerFrom.TabIndex = 12;
-            this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
+            this.dateTimePickerFrom.TabIndex = 14;
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(230, 12);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(232, 57);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePickerTo.TabIndex = 13;
+            this.dateTimePickerTo.TabIndex = 15;
             this.dateTimePickerTo.Tag = "";
-            this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
-            // chart1
+            // textBoxPrice
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 47);
-            this.chart1.Margin = new System.Windows.Forms.Padding(0);
-            this.chart1.Name = "chart1";
-            this.chart1.Padding = new System.Windows.Forms.Padding(3);
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(277, 166);
-            this.chart1.TabIndex = 14;
-            this.chart1.Text = "chart1";
+            this.textBoxPrice.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxPrice.Location = new System.Drawing.Point(426, 57);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 21;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.Controls.Add(this.dateTimePickerFrom);
-            this.panel2.Controls.Add(this.dateTimePickerTo);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 41);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(731, 44);
-            this.panel2.TabIndex = 15;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(197, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "To:";
             // 
-            // panel3
+            // label3
             // 
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 85);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(731, 348);
-            this.panel3.TabIndex = 16;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(10);
-            this.panel5.Size = new System.Drawing.Size(454, 348);
-            this.panel5.TabIndex = 16;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.chart1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(454, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(277, 348);
-            this.panel4.TabIndex = 15;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(376, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "Price:";
             // 
             // storageBindingSource
             // 
@@ -254,40 +235,41 @@ namespace CaffeBar
             this.storageBindingSource1.DataMember = "Storage";
             this.storageBindingSource1.DataSource = this.caffeBarDatabaseDataSet;
             // 
-            // FormConsumption
+            // FormAddToHappyHour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(731, 433);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.dateTimePickerFrom);
+            this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.panel1);
-            this.Name = "FormConsumption";
-            this.Text = "Consumption";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormConsumption_FormClosed);
-            this.Load += new System.EventHandler(this.FormConsumption_Load);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonAddItem);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "FormAddToHappyHour";
+            this.Text = "Happy hour";
+            this.Load += new System.EventHandler(this.FormAddToHappyHour_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.caffeBarDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storageBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonAddItem;
         private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.BindingSource caffeBarDatabaseDataSetBindingSource;
         private CaffeBarDatabaseDataSet caffeBarDatabaseDataSet;
@@ -301,10 +283,8 @@ namespace CaffeBar
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

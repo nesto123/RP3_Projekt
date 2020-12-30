@@ -60,6 +60,7 @@ namespace CaffeBar
 
         private void button3_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormConsumption());
             //--
             //Kod
             //--
@@ -91,6 +92,7 @@ namespace CaffeBar
 
         private void button6_Click(object sender, EventArgs e)
         {
+            openChildForm(new FormAddToHappyHour());
             //--
             //Kod
             //--
@@ -147,13 +149,17 @@ namespace CaffeBar
             Application.Restart();
         }
 
-        private void FormApp_Load(object sender, EventArgs e)   //maknut--- kad dode login
+        private void FormApp_Load(object sender, EventArgs e)   
         {
-            User.name = "konobar";
-            User.authorisation = "admin";
-            User.id = 4;
+            //User.name = "konobar";
+            //User.authorisation = "admin";
+            //User.id = 4;
             User.showNotification = true;
-            buttonUser.Text = " " + User.name; 
+            buttonUser.Text = " " + User.name;
+            if (User.authorisation.Contains("Konobar"))
+            {
+                this.buttonAccounts.Dispose();
+            }
         }
 
         private void buttonAccounts_Click_1(object sender, EventArgs e)
@@ -164,5 +170,7 @@ namespace CaffeBar
             //--
             hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
         }
+
+
     }
 }

@@ -194,7 +194,7 @@ namespace CaffeBar
         {
 
             SqlConnection connection = DB.getConnection();
-            SqlCommand command = new SqlCommand("select IdItem_FK, From_, Untill, Pastprice from Happyhour Where IdItem_FK = @idItem", connection);
+            SqlCommand command = new SqlCommand("select IdItem_FK, From_, Untill, Newprice from Happyhour Where IdItem_FK = @idItem", connection);
             var onSale = false;
             errorMessage = ""; newPrice = decimal.Parse("-1");
             command.Parameters.AddWithValue("@idItem", itemId);
@@ -255,17 +255,11 @@ namespace CaffeBar
             return;          
         }
 //->     // not done -- not tested
-        internal static String/*errorMessage*/ addToHappyHour(in int itemId, in String from_, in String untill) // dodat još provjeru je li artikl već na akciji pa onemogućit to
+        internal static String/*errorMessage*/ addToHappyHour( int itemId, in DateTime from_, in DateTime untill, decimal price) // dodat još provjeru je li artikl već na akciji pa onemogućit to
         {
             SqlConnection connection = DB.getConnection();
-            SqlCommand command = new SqlCommand("INSERT INTO dbo.Happyhour(IdItem_FK, From_, Untill, Pastprice)  VALUES(@idItem_FK, @from_, @untill, @pastprice)", connection);
-            SqlCommand command2 = new SqlCommand("SELECT Price FROM [Storage] WHERE Id=@id;", connection);
-
+            SqlCommand command = new SqlCommand("INSERT INTO dbo.Happyhour(IdItem_FK, From_, Untill, Newprice)  VALUES(@idItem_FK, @from_, @untill, @Newprice)", connection);
             String errorMessage = "";
-            var list = new List<Tuple<String, String>>();
-
-            command2.Parameters.Add("@id", SqlDbType.Int);
-            command2.Parameters["@id"].Value = itemId;
 
             command.Parameters.Add("@idItem_FK", SqlDbType.Int);
             command.Parameters["@idItem_FK"].Value = itemId;
@@ -273,17 +267,11 @@ namespace CaffeBar
             command.Parameters["@from_"].Value = from_;
             command.Parameters.Add("@untill", SqlDbType.DateTime2);
             command.Parameters["@untill"].Value = untill;
-
-            command.Parameters.Add("@pastprice", SqlDbType.Decimal);
-
-
+            command.Parameters.Add("@Newprice", SqlDbType.Decimal);
+            command.Parameters["@Newprice"].Value = price;
+            
             try
             {
-                SqlDataReader dataReader = command2.ExecuteReader();
-
-                dataReader.Read();
-                var past_price = dataReader.GetDecimal(0);
-                command.Parameters["@pastprice"].Value = past_price;
                 command.ExecuteNonQuery();
             }
             catch (Exception ex)

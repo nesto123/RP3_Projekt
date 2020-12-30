@@ -52,7 +52,7 @@ namespace CaffeBar
             MessageBox.Show(pass);
             */
             SqlConnection connection = DB.getConnection();
-            SqlCommand command = new SqlCommand("SELECT Password, Authorisation FROM [User] WHERE Username=@username;", connection);
+            SqlCommand command = new SqlCommand("SELECT Id, Password, Authorisation FROM [User] WHERE Username=@username;", connection);
             command.Parameters.Add("@username", SqlDbType.NChar);
             command.Parameters["@username"].Value = textBoxUsername.Text.ToString();
 
@@ -70,8 +70,10 @@ namespace CaffeBar
                     return;
                 }
                 dataReader.Read();
-                pass = (String)dataReader.GetValue(0);
-                User.authorisation = dataReader.GetString(1);
+                User.id = dataReader.GetInt32(0);
+                pass = (String)dataReader.GetValue(1);
+                User.authorisation = dataReader.GetString(2);
+                User.name = textBoxUsername.Text.ToString();
             }
             catch (Exception ex)
             {
@@ -93,10 +95,9 @@ namespace CaffeBar
                 MessageBox.Show("Invalid credentials!");
         }
 
-        private void FormLogIn_Load(object sender, EventArgs e)
-        {
 
-        }
+
+
     }
 }
 

@@ -108,7 +108,7 @@ namespace CaffeBar
             this.buttonAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonAddItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddItem.Location = new System.Drawing.Point(619, 91);
+            this.buttonAddItem.Location = new System.Drawing.Point(617, 128);
             this.buttonAddItem.Name = "buttonAddItem";
             this.buttonAddItem.Size = new System.Drawing.Size(102, 30);
             this.buttonAddItem.TabIndex = 3;
@@ -149,7 +149,7 @@ namespace CaffeBar
             this.buttonDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeleteItem.Location = new System.Drawing.Point(619, 163);
+            this.buttonDeleteItem.Location = new System.Drawing.Point(617, 200);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
             this.buttonDeleteItem.Size = new System.Drawing.Size(102, 30);
             this.buttonDeleteItem.TabIndex = 5;
@@ -167,7 +167,7 @@ namespace CaffeBar
             this.buttonEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonEditItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditItem.Location = new System.Drawing.Point(619, 127);
+            this.buttonEditItem.Location = new System.Drawing.Point(617, 164);
             this.buttonEditItem.Name = "buttonEditItem";
             this.buttonEditItem.Size = new System.Drawing.Size(102, 30);
             this.buttonEditItem.TabIndex = 6;
@@ -244,7 +244,7 @@ namespace CaffeBar
             this.buttonShowNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonShowNotification.ForeColor = System.Drawing.Color.Silver;
             this.buttonShowNotification.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonShowNotification.Location = new System.Drawing.Point(619, 199);
+            this.buttonShowNotification.Location = new System.Drawing.Point(617, 91);
             this.buttonShowNotification.Name = "buttonShowNotification";
             this.buttonShowNotification.Size = new System.Drawing.Size(102, 30);
             this.buttonShowNotification.TabIndex = 11;

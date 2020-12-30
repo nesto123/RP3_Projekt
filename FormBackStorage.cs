@@ -29,6 +29,12 @@ namespace CaffeBar
 
         private void FormBackStorage_Load(object sender, EventArgs e)
         {
+            if ( User.authorisation.Contains("Konobar") )
+            {
+                this.buttonAddItem.Dispose();
+                this.buttonEditItem.Dispose();
+                this.buttonDeleteItem.Dispose();
+            }
             UpdateStorageView();
         }
 

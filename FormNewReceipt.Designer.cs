@@ -180,6 +180,7 @@ namespace CaffeBar
             this.buttonCloseRegister.TabIndex = 6;
             this.buttonCloseRegister.Text = "Close register";
             this.buttonCloseRegister.UseVisualStyleBackColor = false;
+            this.buttonCloseRegister.Click += new System.EventHandler(this.buttonCloseRegister_Click);
             // 
             // buttonCloseForm
             // 

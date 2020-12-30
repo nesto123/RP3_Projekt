@@ -37,7 +37,7 @@ namespace CaffeBar
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelPlaylistSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonHappyhour = new System.Windows.Forms.Button();
             this.buttonBackStorage = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
             this.panelMediaSubmenu = new System.Windows.Forms.Panel();
@@ -166,7 +166,7 @@ namespace CaffeBar
             // 
             this.panelPlaylistSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panelPlaylistSubmenu.Controls.Add(this.button5);
-            this.panelPlaylistSubmenu.Controls.Add(this.button6);
+            this.panelPlaylistSubmenu.Controls.Add(this.buttonHappyhour);
             this.panelPlaylistSubmenu.Controls.Add(this.buttonBackStorage);
             this.panelPlaylistSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPlaylistSubmenu.Location = new System.Drawing.Point(0, 327);
@@ -193,24 +193,24 @@ namespace CaffeBar
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // buttonHappyhour
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button6.Location = new System.Drawing.Point(0, 45);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(198, 45);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "button6";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.buttonHappyhour.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonHappyhour.FlatAppearance.BorderSize = 0;
+            this.buttonHappyhour.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonHappyhour.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonHappyhour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHappyhour.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHappyhour.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonHappyhour.Location = new System.Drawing.Point(0, 45);
+            this.buttonHappyhour.Name = "buttonHappyhour";
+            this.buttonHappyhour.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.buttonHappyhour.Size = new System.Drawing.Size(198, 45);
+            this.buttonHappyhour.TabIndex = 1;
+            this.buttonHappyhour.Text = "Happy hour";
+            this.buttonHappyhour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonHappyhour.UseVisualStyleBackColor = true;
+            this.buttonHappyhour.Click += new System.EventHandler(this.button6_Click);
             // 
             // buttonBackStorage
             // 
@@ -226,7 +226,7 @@ namespace CaffeBar
             this.buttonBackStorage.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
             this.buttonBackStorage.Size = new System.Drawing.Size(198, 45);
             this.buttonBackStorage.TabIndex = 0;
-            this.buttonBackStorage.Text = "Back Storage";
+            this.buttonBackStorage.Text = "Storage";
             this.buttonBackStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBackStorage.UseVisualStyleBackColor = true;
             this.buttonBackStorage.Click += new System.EventHandler(this.button7_Click);
@@ -247,7 +247,7 @@ namespace CaffeBar
             this.buttonStorage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonStorage.Size = new System.Drawing.Size(198, 45);
             this.buttonStorage.TabIndex = 3;
-            this.buttonStorage.Text = " Storage";
+            this.buttonStorage.Text = " Menagment";
             this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonStorage.UseVisualStyleBackColor = true;
@@ -422,7 +422,7 @@ namespace CaffeBar
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelPlaylistSubmenu;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonHappyhour;
         private System.Windows.Forms.Button buttonBackStorage;
         private System.Windows.Forms.Button buttonStorage;
         private System.Windows.Forms.Panel panelChieldForm;
