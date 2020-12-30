@@ -13,7 +13,9 @@ namespace CaffeBar
     /// </summary>
     internal static class DB
     {
-        //public static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True";
+        //internal static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\RP3_Projekt\CaffeBarDatabase.mdf;Integrated Security=True";
+        private static string part = System.IO.Directory.GetCurrentDirectory().Substring(0, System.IO.Directory.GetCurrentDirectory().LastIndexOf(@"\"));
+        internal static string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + part.Substring(0, part.LastIndexOf(@"\")) + @"\CaffeBarDatabase.mdf"+ ";Integrated Security=True";
         internal static SqlConnection db = null;
 
         internal static SqlConnection getConnection()
