@@ -171,6 +171,9 @@ namespace CaffeBar
             hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
         }
 
-
+        private void FormApp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

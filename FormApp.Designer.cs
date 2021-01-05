@@ -398,6 +398,7 @@ namespace CaffeBar
             this.MinimumSize = new System.Drawing.Size(985, 583);
             this.Name = "FormApp";
             this.Text = "Caffe bar";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormApp_FormClosed);
             this.Load += new System.EventHandler(this.FormApp_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelPlaylistSubmenu.ResumeLayout(false);
