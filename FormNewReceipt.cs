@@ -82,6 +82,7 @@ namespace CaffeBar
                     btn.Text = item.Item2;
                     btn.Item = item.Item2;
                     btn.Click += new EventHandler(buttonAddItemToReceipt_Click);
+                    btn.AutoSize = true;
                     flowLayoutPanelItems.Controls.Add(btn);
                 }
                 ResumeLayout();
