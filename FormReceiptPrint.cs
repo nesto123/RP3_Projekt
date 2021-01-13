@@ -21,7 +21,7 @@ namespace CaffeBar
 
         private void FormReceiptPrint_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Restart();
+            //Application.Restart();
         }
 
         DataTable items;
