@@ -24,6 +24,7 @@ namespace CaffeBar
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+
             /*string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\CaffeBar\CaffeBarDatabase.mdf;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connection_string);
             SqlCommand command = new SqlCommand("SELECT Password FROM [User] WHERE Username=@username;", connection);
@@ -94,8 +95,6 @@ namespace CaffeBar
             else
                 MessageBox.Show("Invalid credentials!");
         }
-
-
 
 
     }

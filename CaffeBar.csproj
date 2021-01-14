@@ -128,6 +128,12 @@
     <Compile Include="FormAddToHappyHour.Designer.cs">
       <DependentUpon>FormAddToHappyHour.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReceipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReceipts.Designer.cs">
+      <DependentUpon>FormReceipts.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConsumption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddToHappyHour.resx">
       <DependentUpon>FormAddToHappyHour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReceipts.resx">
+      <DependentUpon>FormReceipts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsumption.resx">
       <DependentUpon>FormConsumption.cs</DependentUpon>
@@ -297,6 +306,8 @@
       <DependentUpon>CaffeBarDatabase.mdf</DependentUpon>
     </Content>
     <None Include="Resources\standby-removebg-preview.png" />
+    <None Include="Resources\2logo-removebg-preview.png" />
+    <None Include="Resources\2logo-removebg-preview.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

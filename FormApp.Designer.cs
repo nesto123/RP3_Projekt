@@ -41,7 +41,7 @@ namespace CaffeBar
             this.buttonBackStorage = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
             this.panelMediaSubmenu = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonReceipts = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonNewReceipt = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
@@ -256,7 +256,7 @@ namespace CaffeBar
             // panelMediaSubmenu
             // 
             this.panelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMediaSubmenu.Controls.Add(this.button4);
+            this.panelMediaSubmenu.Controls.Add(this.buttonReceipts);
             this.panelMediaSubmenu.Controls.Add(this.button3);
             this.panelMediaSubmenu.Controls.Add(this.buttonNewReceipt);
             this.panelMediaSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
@@ -265,24 +265,24 @@ namespace CaffeBar
             this.panelMediaSubmenu.Size = new System.Drawing.Size(198, 137);
             this.panelMediaSubmenu.TabIndex = 2;
             // 
-            // button4
+            // buttonReceipts
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button4.Location = new System.Drawing.Point(0, 90);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(198, 45);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonReceipts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonReceipts.FlatAppearance.BorderSize = 0;
+            this.buttonReceipts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonReceipts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonReceipts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReceipts.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReceipts.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonReceipts.Location = new System.Drawing.Point(0, 90);
+            this.buttonReceipts.Name = "buttonReceipts";
+            this.buttonReceipts.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.buttonReceipts.Size = new System.Drawing.Size(198, 45);
+            this.buttonReceipts.TabIndex = 2;
+            this.buttonReceipts.Text = "Receipts";
+            this.buttonReceipts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReceipts.UseVisualStyleBackColor = true;
+            this.buttonReceipts.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -416,7 +416,7 @@ namespace CaffeBar
 
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Panel panelMediaSubmenu;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonReceipts;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonNewReceipt;
         private System.Windows.Forms.Button buttonRegister;

@@ -32,3 +32,8 @@ SELECT S.Id,S.Item, S.Price, S.Cooler,S.Backstorage,S.Deleted, COUNT(H.Id) FROM 
     FROM dbo.Storage S
     LEFT JOIN dbo.Happyhour H
     ON S.Id=H.IdItem_FK
+
+
+SELECT R.Id, R.Time, R.Total, R.Payment_method, R.Discount, U.Username as Waiter FROM  [Receipts] R, [User] U WHERE U.Id = R.Waiter_id AND @from<Time AND Time< @to AND R.Deleted = 0 
+
+SELECT RI.Id_itemFK AS Id, S.Item, RI.Amount, RI.Price AS Price_per_unit, RI.Amount*RI.Price AS Total  FROM [Receipts_item] RI, [Storage] S WHERE RI.Id_receiptFK =175 AND S.Id=Id_itemFK

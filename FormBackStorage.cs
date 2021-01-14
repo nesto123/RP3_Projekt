@@ -77,7 +77,7 @@ namespace CaffeBar
 
             FormItemStorage form = new FormItemStorage();
 
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 form.textBoxId.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 form.textBoxItem.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -88,7 +88,7 @@ namespace CaffeBar
                 UpdateStorageView();
             }
             else
-                MessageBox.Show("Please select a row!");
+                MessageBox.Show("Please select one row!");
         }
 
         private void buttonDeleteItem_Click(object sender, EventArgs e)

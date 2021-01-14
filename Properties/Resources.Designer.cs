@@ -61,6 +61,16 @@ namespace CaffeBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon _2logo_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("_2logo_removebg_preview", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap cash_register1_removebg_preview {

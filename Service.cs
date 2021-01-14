@@ -399,5 +399,41 @@ namespace CaffeBar
             return dataset;
         }
         #endregion
+
+        internal static DataSet getReceiptItems(in int id)
+        {
+            SqlConnection connection = DB.getConnection();
+            DataSet dataset = new DataSet();
+
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT RI.Id_itemFK AS Id, S.Item, RI.Amount, RI.Price AS Price_per_unit  FROM [Receipts_item] RI, [Storage] S WHERE RI.Id_receiptFK =@id AND S.Id=Id_itemFK", connection))
+            {
+                adapter.SelectCommand.Parameters.AddWithValue("@id", id);
+                adapter.Fill(dataset);
+            }
+            return dataset;
+        }
+
+        internal static void deleteReceipt(in string id, out string errorMsg)
+        {
+            SqlConnection connection = DB.getConnection();
+            SqlCommand sqlcommand = new SqlCommand("update dbo.Receipts set Deleted = 1 where Id =@id", connection);
+
+            sqlcommand.Parameters.AddWithValue("@id", id);
+            errorMsg = "Receipt deleted!";
+            try
+            {
+                sqlcommand.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                errorMsg = "ERROR:" + ex.Message;
+            }
+            finally
+            {
+                DB.closeConnection();
+            }
+        }
+
+
     }
 }

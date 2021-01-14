@@ -21,12 +21,13 @@ namespace CaffeBar
 
         private void FormReceiptPrint_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Application.Restart();
+            if (toggle == "report")
+                Application.Restart();
         }
 
         DataTable items;
         string toggle;
-        public FormReceiptPrint( string _toggle , DataTable dataTableReceipt= null,Double total=0, String paymentMethod="",Int32 receiptId=0, String discount="")
+        public FormReceiptPrint( string _toggle , DataTable dataTableReceipt= null,Double total=0.0, String paymentMethod="",Int32 receiptId=0, String discount="")
         {
             InitializeComponent();
             toggle = _toggle;

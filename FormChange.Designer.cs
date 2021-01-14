@@ -29,6 +29,7 @@ namespace CaffeBar
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChange));
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPayed = new System.Windows.Forms.TextBox();
             this.textBoxChange = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@ namespace CaffeBar
             this.textBoxPayed.Name = "textBoxPayed";
             this.textBoxPayed.Size = new System.Drawing.Size(192, 23);
             this.textBoxPayed.TabIndex = 1;
-            this.textBoxPayed.Enter += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // textBoxChange
             // 
@@ -194,6 +194,7 @@ namespace CaffeBar
             // 
             // FormChange
             // 
+            this.AcceptButton = this.buttonSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
@@ -212,6 +213,7 @@ namespace CaffeBar
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormChange";
             this.Text = "Change";

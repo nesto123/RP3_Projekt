@@ -69,6 +69,7 @@ namespace CaffeBar
 
         private void button4_Click(object sender, EventArgs e)
         {
+            openChildForm(new FromReceipts());
             //--
             //Kod
             //--

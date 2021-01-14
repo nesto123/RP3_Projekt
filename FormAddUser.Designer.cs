@@ -29,6 +29,7 @@ namespace CaffeBar
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddUser));
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
@@ -127,6 +128,7 @@ namespace CaffeBar
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormAddUser";
             this.Text = "New user";
