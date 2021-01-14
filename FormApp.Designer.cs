@@ -35,12 +35,12 @@ namespace CaffeBar
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonAccounts = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.panelPlaylistSubmenu = new System.Windows.Forms.Panel();
+            this.panelManagmentSubmenu = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonHappyhour = new System.Windows.Forms.Button();
             this.buttonBackStorage = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
-            this.panelMediaSubmenu = new System.Windows.Forms.Panel();
+            this.panelRegisterSubmenu = new System.Windows.Forms.Panel();
             this.buttonReceipts = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonNewReceipt = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@ namespace CaffeBar
             this.panelChieldForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
-            this.panelPlaylistSubmenu.SuspendLayout();
-            this.panelMediaSubmenu.SuspendLayout();
+            this.panelManagmentSubmenu.SuspendLayout();
+            this.panelRegisterSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelChieldForm.SuspendLayout();
@@ -66,9 +66,9 @@ namespace CaffeBar
             this.panelSideMenu.Controls.Add(this.buttonHelp);
             this.panelSideMenu.Controls.Add(this.buttonAccounts);
             this.panelSideMenu.Controls.Add(this.buttonLogout);
-            this.panelSideMenu.Controls.Add(this.panelPlaylistSubmenu);
+            this.panelSideMenu.Controls.Add(this.panelManagmentSubmenu);
             this.panelSideMenu.Controls.Add(this.buttonStorage);
-            this.panelSideMenu.Controls.Add(this.panelMediaSubmenu);
+            this.panelSideMenu.Controls.Add(this.panelRegisterSubmenu);
             this.panelSideMenu.Controls.Add(this.buttonRegister);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -117,6 +117,7 @@ namespace CaffeBar
             this.buttonHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // buttonAccounts
             // 
@@ -162,17 +163,17 @@ namespace CaffeBar
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // panelPlaylistSubmenu
+            // panelManagmentSubmenu
             // 
-            this.panelPlaylistSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelPlaylistSubmenu.Controls.Add(this.button5);
-            this.panelPlaylistSubmenu.Controls.Add(this.buttonHappyhour);
-            this.panelPlaylistSubmenu.Controls.Add(this.buttonBackStorage);
-            this.panelPlaylistSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistSubmenu.Location = new System.Drawing.Point(0, 327);
-            this.panelPlaylistSubmenu.Name = "panelPlaylistSubmenu";
-            this.panelPlaylistSubmenu.Size = new System.Drawing.Size(198, 137);
-            this.panelPlaylistSubmenu.TabIndex = 3;
+            this.panelManagmentSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelManagmentSubmenu.Controls.Add(this.button5);
+            this.panelManagmentSubmenu.Controls.Add(this.buttonHappyhour);
+            this.panelManagmentSubmenu.Controls.Add(this.buttonBackStorage);
+            this.panelManagmentSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelManagmentSubmenu.Location = new System.Drawing.Point(0, 327);
+            this.panelManagmentSubmenu.Name = "panelManagmentSubmenu";
+            this.panelManagmentSubmenu.Size = new System.Drawing.Size(198, 137);
+            this.panelManagmentSubmenu.TabIndex = 3;
             // 
             // button5
             // 
@@ -253,17 +254,17 @@ namespace CaffeBar
             this.buttonStorage.UseVisualStyleBackColor = true;
             this.buttonStorage.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
             // 
-            // panelMediaSubmenu
+            // panelRegisterSubmenu
             // 
-            this.panelMediaSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMediaSubmenu.Controls.Add(this.buttonReceipts);
-            this.panelMediaSubmenu.Controls.Add(this.button3);
-            this.panelMediaSubmenu.Controls.Add(this.buttonNewReceipt);
-            this.panelMediaSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMediaSubmenu.Location = new System.Drawing.Point(0, 145);
-            this.panelMediaSubmenu.Name = "panelMediaSubmenu";
-            this.panelMediaSubmenu.Size = new System.Drawing.Size(198, 137);
-            this.panelMediaSubmenu.TabIndex = 2;
+            this.panelRegisterSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelRegisterSubmenu.Controls.Add(this.buttonReceipts);
+            this.panelRegisterSubmenu.Controls.Add(this.button3);
+            this.panelRegisterSubmenu.Controls.Add(this.buttonNewReceipt);
+            this.panelRegisterSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelRegisterSubmenu.Location = new System.Drawing.Point(0, 145);
+            this.panelRegisterSubmenu.Name = "panelRegisterSubmenu";
+            this.panelRegisterSubmenu.Size = new System.Drawing.Size(198, 137);
+            this.panelRegisterSubmenu.TabIndex = 2;
             // 
             // buttonReceipts
             // 
@@ -401,8 +402,8 @@ namespace CaffeBar
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormApp_FormClosed);
             this.Load += new System.EventHandler(this.FormApp_Load);
             this.panelSideMenu.ResumeLayout(false);
-            this.panelPlaylistSubmenu.ResumeLayout(false);
-            this.panelMediaSubmenu.ResumeLayout(false);
+            this.panelManagmentSubmenu.ResumeLayout(false);
+            this.panelRegisterSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelChieldForm.ResumeLayout(false);
@@ -415,13 +416,13 @@ namespace CaffeBar
         #endregion
 
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelMediaSubmenu;
+        private System.Windows.Forms.Panel panelRegisterSubmenu;
         private System.Windows.Forms.Button buttonReceipts;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button buttonNewReceipt;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Panel panelPlaylistSubmenu;
+        private System.Windows.Forms.Panel panelManagmentSubmenu;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonHappyhour;
         private System.Windows.Forms.Button buttonBackStorage;

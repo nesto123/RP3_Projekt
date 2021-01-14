@@ -19,16 +19,16 @@ namespace CaffeBar
         #region Toggle subMenu.Visible
         private void costumizeDesign()
         {
-            panelPlaylistSubmenu.Visible = false;
-            panelMediaSubmenu.Visible = false;
+            panelManagmentSubmenu.Visible = false;
+            panelRegisterSubmenu.Visible = false;
         }
 
         private void hideSubmenu()
         {
-            if (panelMediaSubmenu.Visible == true)
-                panelMediaSubmenu.Visible = false;
-            if (panelPlaylistSubmenu.Visible == true)
-                panelPlaylistSubmenu.Visible = false;
+            if (panelRegisterSubmenu.Visible == true)
+                panelRegisterSubmenu.Visible = false;
+            if (panelManagmentSubmenu.Visible == true)
+                panelManagmentSubmenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -46,87 +46,63 @@ namespace CaffeBar
         #region Submenu
         private void buttonMedia_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelMediaSubmenu);
+            showSubMenu(panelRegisterSubmenu);
         }
 
         private void buttonNewReceipt_Click(object sender, EventArgs e)
         {
             openChildForm(new FormNewReceipt());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             openChildForm(new FormConsumption());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             openChildForm(new FromReceipts());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
         #endregion
-        #region PlaylistSubmenu
+        #region ManagmentSubmenu
         private void buttonPlaylistManagment_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPlaylistSubmenu);
+            showSubMenu(panelManagmentSubmenu);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             openChildForm(new FormBackStorage());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             openChildForm(new FormAddToHappyHour());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
         #endregion
 
 
         #region Help
-
-        private void buttonHelp_Click_1(object sender, EventArgs e)
+        private void buttonHelp_Click(object sender, EventArgs e)
         {
-            //--
-            //Kod
-            //--
-            hideSubmenu();
+            openChildForm(new FormHelp());
+            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
         }
         #endregion
 
         private void buttonAccounts_Click(object sender, EventArgs e)
         {
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private Form activeForm = null;
@@ -166,15 +142,14 @@ namespace CaffeBar
         private void buttonAccounts_Click_1(object sender, EventArgs e)
         {
             openChildForm(new FormAccounts());
-            //--
-            //Kod
-            //--
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            hideSubmenu();
         }
 
         private void FormApp_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }

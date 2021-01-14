@@ -61,7 +61,6 @@ namespace CaffeBar
             else
                 return true;
         }
-
         #endregion
 
         private void buttonCancle_Click_1(object sender, EventArgs e)

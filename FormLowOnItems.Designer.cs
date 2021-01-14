@@ -34,7 +34,7 @@ namespace CaffeBar
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLowOnItems));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonCancle = new System.Windows.Forms.Button();
+            this.buttonDone = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonTurnoff = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -62,21 +62,21 @@ namespace CaffeBar
             this.labelTitle.TabIndex = 11;
             this.labelTitle.Text = "Low stock";
             // 
-            // buttonCancle
+            // buttonDone
             // 
-            this.buttonCancle.BackColor = System.Drawing.Color.Tomato;
-            this.buttonCancle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancle.FlatAppearance.BorderSize = 0;
-            this.buttonCancle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancle.ForeColor = System.Drawing.Color.White;
-            this.buttonCancle.Location = new System.Drawing.Point(28, 481);
-            this.buttonCancle.Name = "buttonCancle";
-            this.buttonCancle.Size = new System.Drawing.Size(133, 35);
-            this.buttonCancle.TabIndex = 29;
-            this.buttonCancle.Text = "Done";
-            this.buttonCancle.UseVisualStyleBackColor = false;
-            this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click_1);
+            this.buttonDone.BackColor = System.Drawing.Color.Tomato;
+            this.buttonDone.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonDone.FlatAppearance.BorderSize = 0;
+            this.buttonDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDone.ForeColor = System.Drawing.Color.White;
+            this.buttonDone.Location = new System.Drawing.Point(28, 481);
+            this.buttonDone.Name = "buttonDone";
+            this.buttonDone.Size = new System.Drawing.Size(133, 35);
+            this.buttonDone.TabIndex = 29;
+            this.buttonDone.Text = "Done";
+            this.buttonDone.UseVisualStyleBackColor = false;
+            this.buttonDone.Click += new System.EventHandler(this.buttonCancle_Click_1);
             // 
             // dataGridView1
             // 
@@ -135,14 +135,15 @@ namespace CaffeBar
             // 
             // FormLowOnItems
             // 
+            this.AcceptButton = this.buttonDone;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.CancelButton = this.buttonCancle;
+            this.CancelButton = this.buttonDone;
             this.ClientSize = new System.Drawing.Size(399, 541);
             this.Controls.Add(this.buttonTurnoff);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.buttonCancle);
+            this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -160,7 +161,7 @@ namespace CaffeBar
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Button buttonCancle;
+        private System.Windows.Forms.Button buttonDone;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonTurnoff;
     }
