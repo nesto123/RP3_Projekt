@@ -25,33 +25,6 @@ namespace CaffeBar
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 
-            /*string connection_string = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\franv\Documents\Faks-noDrive\RP3\projekt\CaffeBar\CaffeBarDatabase.mdf;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connection_string);
-            SqlCommand command = new SqlCommand("SELECT Password FROM [User] WHERE Username=@username;", connection);
-            command.Parameters.Add("@username", SqlDbType.NChar);
-            command.Parameters["@username"].Value = textBoxUsername.Text.ToString();
-
-            SqlDataReader dataReader;
-            String pass= "nista";
-           // CaffeBarDatabaseDataSet;
-            try
-            {
-                connection.Open();
-                dataReader = command.ExecuteReader();
-                if(dataReader.HasRows)
-                {
-                    dataReader.Read(); 
-                    pass = (String) dataReader.GetValue(0);
-                }
-
-            }catch(Exception ex)
-            {
-                MessageBox.Show("ERROR: Database connection unsuccessful!" + ex.ToString());
-                this.Close();
-            }
-
-            MessageBox.Show(pass);
-            */
             SqlConnection connection = DB.getConnection();
             SqlCommand command = new SqlCommand("SELECT Id, Password, Authorisation FROM [User] WHERE Username=@username;", connection);
             command.Parameters.Add("@username", SqlDbType.NChar);
@@ -86,7 +59,7 @@ namespace CaffeBar
             }
 
 
-            if (pass == textBoxPassword.Text.ToString())
+            if (pass == Hash(textBoxPassword.Text.ToString()))//if (pass == textBoxPassword.Text.ToString())
             {
                 this.Hide();
                 FormApp formApp = new FormApp();
@@ -96,7 +69,22 @@ namespace CaffeBar
                 MessageBox.Show("Invalid credentials!");
         }
 
+        private void FormLogIn_Load(object sender, EventArgs e)
+        {
+            //za hash sptemit u bazu
+            //textBoxUsername.Text = Hash("konobar");
+        }
 
+        public string Hash(string password)
+        {
+            var bytes = new UTF8Encoding().GetBytes(password);
+            byte[] hashBytes;
+            using (var algorithm = new System.Security.Cryptography.SHA512Managed())
+            {
+                hashBytes = algorithm.ComputeHash(bytes);
+            }
+            return Convert.ToBase64String(hashBytes);
+        }
     }
 }
 
