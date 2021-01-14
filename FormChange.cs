@@ -43,19 +43,19 @@ namespace CaffeBar
         #region Input validation
         private bool failedValidation(in string message)
         {
-            MessageBox.Show("ERROR: Input " +message + " invalid!");
+            MessageBox.Show("ERROR: Input " + message + " invalid!");
             return false;
         }
         private bool validateForms()
         {
             textBoxPrice.Text = textBoxPrice.Text.Replace(",", ".");
             if (/*!Regex.Match(textBoxPayed.Text, @"^([0-9]+)$", RegexOptions.IgnoreCase).Success &&*/
-                textBoxPayed.Text =="" || 
+                textBoxPayed.Text == "" ||
                 !double.TryParse(textBoxPayed.Text, out _)
                 )
                 return failedValidation("Payed");
 
-            else if ( _total > double.Parse(textBoxPayed.Text)   )
+            else if (_total > double.Parse(textBoxPayed.Text))
                 return failedValidation("Payed (insuficient)");
 
             else

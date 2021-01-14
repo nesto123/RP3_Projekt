@@ -5,7 +5,7 @@ namespace CaffeBar
 {
     public partial class FormApp : Form
     {
-        /// <summary>
+        //[/ <summary>
         /// Main window for application.
         /// </summary>
         public FormApp()
@@ -126,7 +126,7 @@ namespace CaffeBar
             Application.Restart();
         }
 
-        private void FormApp_Load(object sender, EventArgs e)   
+        private void FormApp_Load(object sender, EventArgs e)
         {
             //User.name = "konobar";
             //User.authorisation = "admin";

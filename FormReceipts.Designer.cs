@@ -45,12 +45,12 @@ namespace CaffeBar
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonDeleteReceipt = new System.Windows.Forms.Button();
             this.storageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.caffeBarDatabaseDataSet = new CaffeBar.CaffeBarDatabaseDataSet();
             this.userTableAdapter = new CaffeBar.CaffeBarDatabaseDataSetTableAdapters.UserTableAdapter();
             this.storageTableAdapter = new CaffeBar.CaffeBarDatabaseDataSetTableAdapters.StorageTableAdapter();
             this.storageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonDeleteReceipt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -99,7 +99,7 @@ namespace CaffeBar
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(587, 328);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 4;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // label1
@@ -158,7 +158,7 @@ namespace CaffeBar
             this.dateTimePickerFrom.Location = new System.Drawing.Point(74, 12);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(130, 20);
-            this.dateTimePickerFrom.TabIndex = 12;
+            this.dateTimePickerFrom.TabIndex = 1;
             this.dateTimePickerFrom.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
             // dateTimePickerTo
@@ -166,7 +166,7 @@ namespace CaffeBar
             this.dateTimePickerTo.Location = new System.Drawing.Point(230, 12);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePickerTo.TabIndex = 13;
+            this.dateTimePickerTo.TabIndex = 2;
             this.dateTimePickerTo.Tag = "";
             this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerFrom_ValueChanged);
             // 
@@ -211,6 +211,24 @@ namespace CaffeBar
             this.panel4.Size = new System.Drawing.Size(124, 348);
             this.panel4.TabIndex = 15;
             // 
+            // buttonDeleteReceipt
+            // 
+            this.buttonDeleteReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDeleteReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.buttonDeleteReceipt.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonDeleteReceipt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.buttonDeleteReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.buttonDeleteReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteReceipt.ForeColor = System.Drawing.Color.Silver;
+            this.buttonDeleteReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDeleteReceipt.Location = new System.Drawing.Point(10, 13);
+            this.buttonDeleteReceipt.Name = "buttonDeleteReceipt";
+            this.buttonDeleteReceipt.Size = new System.Drawing.Size(102, 30);
+            this.buttonDeleteReceipt.TabIndex = 3;
+            this.buttonDeleteReceipt.Text = "Delete receipt";
+            this.buttonDeleteReceipt.UseVisualStyleBackColor = false;
+            this.buttonDeleteReceipt.Click += new System.EventHandler(this.buttonDeleteReceipt_Click);
+            // 
             // storageBindingSource
             // 
             this.storageBindingSource.DataMember = "Storage";
@@ -233,24 +251,6 @@ namespace CaffeBar
             // 
             this.storageBindingSource1.DataMember = "Storage";
             this.storageBindingSource1.DataSource = this.caffeBarDatabaseDataSet;
-            // 
-            // buttonDeleteReceipt
-            // 
-            this.buttonDeleteReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDeleteReceipt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.buttonDeleteReceipt.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.buttonDeleteReceipt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.buttonDeleteReceipt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.buttonDeleteReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteReceipt.ForeColor = System.Drawing.Color.Silver;
-            this.buttonDeleteReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeleteReceipt.Location = new System.Drawing.Point(10, 13);
-            this.buttonDeleteReceipt.Name = "buttonDeleteReceipt";
-            this.buttonDeleteReceipt.Size = new System.Drawing.Size(102, 30);
-            this.buttonDeleteReceipt.TabIndex = 6;
-            this.buttonDeleteReceipt.Text = "Delete receipt";
-            this.buttonDeleteReceipt.UseVisualStyleBackColor = false;
-            this.buttonDeleteReceipt.Click += new System.EventHandler(this.buttonDeleteReceipt_Click);
             // 
             // FromReceipts
             // 

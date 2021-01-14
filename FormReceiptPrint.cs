@@ -27,7 +27,7 @@ namespace CaffeBar
 
         DataTable items;
         string toggle;
-        public FormReceiptPrint( string _toggle , DataTable dataTableReceipt= null,Double total=0.0, String paymentMethod="",Int32 receiptId=0, String discount="")
+        public FormReceiptPrint(string _toggle, DataTable dataTableReceipt = null, Double total = 0.0, String paymentMethod = "", Int32 receiptId = 0, String discount = "")
         {
             InitializeComponent();
             toggle = _toggle;
@@ -78,7 +78,7 @@ namespace CaffeBar
                 this.reportViewer1.LocalReport.SetParameters(para);
                 this.reportViewer1.RefreshReport();
             }
-            else if( toggle == "report")
+            else if (toggle == "report")
             {
                 reportViewer1.LocalReport.ReportEmbeddedResource = "CaffeBar.RegisterClose.rdlc";
                 //Select ST.Item,sum(RI.Amount) as amount, sum(R.Total) as total  from [Receipts_item] RI, [Receipts] R, [Storage] ST where RI.Id_receiptFK = R.Id AND Time >= cast( floor( cast( getdate() as float)) as datetime)and R.Deleted = 0 AND ST.Id = RI.Id_itemFK group by ST.Item
@@ -90,7 +90,7 @@ namespace CaffeBar
                 this.reportViewer1.LocalReport.DataSources.Clear();
                 this.reportViewer1.LocalReport.DataSources.Add(rds);
 
-                
+
                 ReportParameter[] para = new ReportParameter[]
                 {
                 new ReportParameter("parameterTotal",dataset.Tables[0].Compute("Sum(Total)", string.Empty).ToString()),

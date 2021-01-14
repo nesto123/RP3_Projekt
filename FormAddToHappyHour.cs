@@ -45,7 +45,7 @@ namespace CaffeBar
             SqlConnection connection = DB.getConnection();
             DataSet dataset = new DataSet();
 
-            using(SqlDataAdapter adapter = new SqlDataAdapter("  SELECT S.*, CASE WHEN H.IdItem_FK IS NOT NULL THEN 1 ELSE 0  END AS OnHappyHour FROM dbo.Storage S LEFT JOIN dbo.Happyhour H ON S.Id = H.IdItem_FK ", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("  SELECT S.*, CASE WHEN H.IdItem_FK IS NOT NULL THEN 1 ELSE 0  END AS OnHappyHour FROM dbo.Storage S LEFT JOIN dbo.Happyhour H ON S.Id = H.IdItem_FK ", connection))
             {
                 adapter.Fill(dataset);//, "Storage");
             }
@@ -64,11 +64,11 @@ namespace CaffeBar
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show( dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             //dateTimePickerFrom.Value;
             //dateTimePickerTo.Value;
             //textBoxPrice.Text
-            if(dataGridView1.SelectedRows.Count < 1)
+            if (dataGridView1.SelectedRows.Count < 1)
                 MessageBox.Show("Please select a row!");
             if (decimal.TryParse(textBoxPrice.Text, out _))
                 MessageBox.Show("Price not valid!");

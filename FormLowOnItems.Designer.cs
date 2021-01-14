@@ -73,7 +73,7 @@ namespace CaffeBar
             this.buttonDone.Location = new System.Drawing.Point(28, 481);
             this.buttonDone.Name = "buttonDone";
             this.buttonDone.Size = new System.Drawing.Size(133, 35);
-            this.buttonDone.TabIndex = 29;
+            this.buttonDone.TabIndex = 1;
             this.buttonDone.Text = "Done";
             this.buttonDone.UseVisualStyleBackColor = false;
             this.buttonDone.Click += new System.EventHandler(this.buttonCancle_Click_1);
@@ -116,6 +116,7 @@ namespace CaffeBar
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(345, 397);
             this.dataGridView1.TabIndex = 30;
+            this.dataGridView1.TabStop = false;
             // 
             // buttonTurnoff
             // 
@@ -128,7 +129,7 @@ namespace CaffeBar
             this.buttonTurnoff.Location = new System.Drawing.Point(240, 481);
             this.buttonTurnoff.Name = "buttonTurnoff";
             this.buttonTurnoff.Size = new System.Drawing.Size(133, 35);
-            this.buttonTurnoff.TabIndex = 31;
+            this.buttonTurnoff.TabIndex = 2;
             this.buttonTurnoff.Text = "Disable notification";
             this.buttonTurnoff.UseVisualStyleBackColor = false;
             this.buttonTurnoff.Click += new System.EventHandler(this.buttonTurnoff_Click);

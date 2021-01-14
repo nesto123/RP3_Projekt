@@ -97,6 +97,7 @@ namespace CaffeBar
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(601, 330);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabStop = false;
             // 
             // buttonAddItem
             // 
@@ -111,7 +112,7 @@ namespace CaffeBar
             this.buttonAddItem.Location = new System.Drawing.Point(619, 91);
             this.buttonAddItem.Name = "buttonAddItem";
             this.buttonAddItem.Size = new System.Drawing.Size(102, 30);
-            this.buttonAddItem.TabIndex = 3;
+            this.buttonAddItem.TabIndex = 4;
             this.buttonAddItem.Text = "Add item";
             this.buttonAddItem.UseVisualStyleBackColor = false;
             this.buttonAddItem.Click += new System.EventHandler(this.buttonAddItem_Click);
@@ -172,14 +173,14 @@ namespace CaffeBar
             this.dateTimePickerFrom.Location = new System.Drawing.Point(61, 57);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(130, 20);
-            this.dateTimePickerFrom.TabIndex = 14;
+            this.dateTimePickerFrom.TabIndex = 1;
             // 
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Location = new System.Drawing.Point(232, 57);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePickerTo.TabIndex = 15;
+            this.dateTimePickerTo.TabIndex = 2;
             this.dateTimePickerTo.Tag = "";
             // 
             // textBoxPrice
@@ -188,7 +189,7 @@ namespace CaffeBar
             this.textBoxPrice.Location = new System.Drawing.Point(426, 57);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrice.TabIndex = 21;
+            this.textBoxPrice.TabIndex = 3;
             // 
             // label2
             // 

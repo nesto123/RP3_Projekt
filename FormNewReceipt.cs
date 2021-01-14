@@ -29,7 +29,7 @@ namespace CaffeBar
         {
             SuspendLayout();
 
-            
+
             //  Initilise bill 
             dataTableReceipt.Columns.Add("Id", Type.GetType("System.Int32"));
             dataTableReceipt.Columns.Add("Item", Type.GetType("System.String"));
@@ -51,14 +51,14 @@ namespace CaffeBar
             // add waiter to combobox
             String errorMessage;
             var list = Service.getAllEmployeData(out errorMessage);
-            if(errorMessage!="")
+            if (errorMessage != "")
             {
-                MessageBox.Show("ERROR:Database error! " + errorMessage); 
+                MessageBox.Show("ERROR:Database error! " + errorMessage);
                 ResumeLayout();
                 return;
             }
             else
-                foreach (var item in list )
+                foreach (var item in list)
                     comboBoxCustomer.Items.Add(item.Item2);
 
             ResumeLayout();
@@ -95,8 +95,8 @@ namespace CaffeBar
             totaldiscount = 0.0;
 
             // chek for low items
-            DataSet ds =  Service.getItemCount();
-            if( ds.Tables[0].Rows.Count > 0 &&  User.showNotification)
+            DataSet ds = Service.getItemCount();
+            if (ds.Tables[0].Rows.Count > 0 && User.showNotification)
             {
                 FormLowOnItems formItemcount = new FormLowOnItems(ds);
                 formItemcount.ShowDialog();
@@ -126,25 +126,25 @@ namespace CaffeBar
             var tuple = Service.getPriceCooler(toadd.Id, out errorMessage);
             var price = tuple.Item2;
 
-            if( errorMessage !="")
+            if (errorMessage != "")
             {
                 MessageBox.Show(errorMessage);
-                return ;
+                return;
             }
-            if (tuple.Item1 < currentAmmount + 1 ) 
+            if (tuple.Item1 < currentAmmount + 1)
             {
                 MessageBox.Show("Insufficient amount of " + toadd.Text + "in cooler. Can not add item to receipt!");
-                return ;
+                return;
             }
 
 
             // CHECK IF ITEM IS ON HAPPY HOUR
             decimal newPrice;
-            Service.onHappyHour(toadd.Id,out newPrice, out errorMessage);
+            Service.onHappyHour(toadd.Id, out newPrice, out errorMessage);
             if (errorMessage != "")
             {
                 MessageBox.Show(errorMessage);
-                return ;
+                return;
             }
             if (newPrice.ToString() != "-1")
                 price = newPrice;
@@ -165,7 +165,7 @@ namespace CaffeBar
                 else
                     MessageBox.Show(errorMessage);
             }
-            return ;
+            return;
         }
         #endregion
 
@@ -202,7 +202,7 @@ namespace CaffeBar
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             SuspendLayout();
-            if( dataTableReceipt.Rows.Count == 0)
+            if (dataTableReceipt.Rows.Count == 0)
             {
                 MessageBox.Show("No items added!");
                 ResumeLayout();
@@ -213,8 +213,8 @@ namespace CaffeBar
             Double total;
             String errorMessage;
             Int32 receiptId;
-  ///////////////////////////////////////////////////////////////////////////za zaposlenike
-            if(comboBoxCustomer.SelectedIndex > 0 )
+            ///////////////////////////////////////////////////////////////////////////za zaposlenike
+            if (comboBoxCustomer.SelectedIndex > 0)
                 addDiscount(comboBoxCustomer.SelectedItem.ToString());
 
 
@@ -222,12 +222,12 @@ namespace CaffeBar
 
             if (errorMessage != "")
             {
-                MessageBox.Show(errorMessage); 
+                MessageBox.Show(errorMessage);
                 ResumeLayout();
                 return;
             }
             // print
-            FormReceiptPrint formPrint = new FormReceiptPrint("receipt",dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId, totaldiscount.ToString());
+            FormReceiptPrint formPrint = new FormReceiptPrint("receipt", dataTableReceipt, total, comboBoxPaymentMethod.SelectedItem.ToString(), receiptId, totaldiscount.ToString());
             formPrint.ShowDialog();
 
             //check if payed cash - print combo 
@@ -267,7 +267,7 @@ namespace CaffeBar
                 this.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
                 this.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
                 this.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                this.ForeColor = System.Drawing.Color.Silver; 
+                this.ForeColor = System.Drawing.Color.Silver;
                 this.Size = new System.Drawing.Size(100, 30);
                 this.Size = new System.Drawing.Size(100, 30);
                 this.UseVisualStyleBackColor = false;
@@ -278,13 +278,13 @@ namespace CaffeBar
         #endregion
 
         #region Free stuff for staff
-        private void addDiscount( string employe)/// možda doradit
+        private void addDiscount(string employe)/// možda doradit
         {
             // get today discount count on juice and coffee for employee ->name 
             string errorMessage;
-            Tuple<int, int> discount =  Service.getDiscount(comboBoxCustomer.SelectedItem.ToString(), out errorMessage);
-            if( errorMessage !="")
-                { MessageBox.Show(errorMessage);return; }
+            Tuple<int, int> discount = Service.getDiscount(comboBoxCustomer.SelectedItem.ToString(), out errorMessage);
+            if (errorMessage != "")
+            { MessageBox.Show(errorMessage); return; }
 
 
             //for
@@ -295,19 +295,19 @@ namespace CaffeBar
             tmp = dataTableReceipt.Clone();
             foreach (DataRow row in dataTableReceipt.Rows)
             {
-                if(row["item"].ToString().IndexOf("Caffe", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
+                if (row["item"].ToString().IndexOf("Caffe", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
                 {
-                    if(discount.Item1 > 0)
+                    if (discount.Item1 > 0)
                     {
                         freeAmount = ((int)row["Amount"]) == 1 ? 1 : discount.Item1;
-                        Service.useDiscount(employe,out errorMessage, "Caffe", freeAmount);
+                        Service.useDiscount(employe, out errorMessage, "Caffe", freeAmount);
                         if (errorMessage != "")
-                            { MessageBox.Show(errorMessage); return; }
-                        if((int)row["Amount"]>freeAmount)// dodaj ostatak na kraj
+                        { MessageBox.Show(errorMessage); return; }
+                        if ((int)row["Amount"] > freeAmount)// dodaj ostatak na kraj
                         {
                             row["Amount"] = (int)row["Amount"] - freeAmount;
                             tmp.ImportRow(row);
-                            row["Amount"] =  freeAmount;
+                            row["Amount"] = freeAmount;
                             row["Price per unit"] = decimal.Parse("0");
                         }
                         else
@@ -341,10 +341,10 @@ namespace CaffeBar
                 }
             }
 
-            if(tmp.Rows.Count > 0)
+            if (tmp.Rows.Count > 0)
                 dataTableReceipt.Merge(tmp);
-            
-            
+
+
             // add 20% off everything
             totaldiscount = 20;
         }

@@ -172,7 +172,7 @@ namespace CaffeBar
             this.buttonCancle.Location = new System.Drawing.Point(250, 282);
             this.buttonCancle.Name = "buttonCancle";
             this.buttonCancle.Size = new System.Drawing.Size(100, 35);
-            this.buttonCancle.TabIndex = 29;
+            this.buttonCancle.TabIndex = 3;
             this.buttonCancle.Text = "Done";
             this.buttonCancle.UseVisualStyleBackColor = false;
             this.buttonCancle.Click += new System.EventHandler(this.buttonCancle_Click_1);
@@ -187,7 +187,7 @@ namespace CaffeBar
             this.buttonSubmit.Location = new System.Drawing.Point(131, 282);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(100, 35);
-            this.buttonSubmit.TabIndex = 30;
+            this.buttonSubmit.TabIndex = 2;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);

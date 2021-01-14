@@ -109,7 +109,7 @@ namespace CaffeBar
             this.textBoxItem.Location = new System.Drawing.Point(221, 139);
             this.textBoxItem.Name = "textBoxItem";
             this.textBoxItem.Size = new System.Drawing.Size(192, 23);
-            this.textBoxItem.TabIndex = 2;
+            this.textBoxItem.TabIndex = 1;
             // 
             // textBoxId
             // 
@@ -127,7 +127,7 @@ namespace CaffeBar
             this.textBoxCooler.Location = new System.Drawing.Point(221, 197);
             this.textBoxCooler.Name = "textBoxCooler";
             this.textBoxCooler.Size = new System.Drawing.Size(192, 23);
-            this.textBoxCooler.TabIndex = 4;
+            this.textBoxCooler.TabIndex = 3;
             // 
             // textBoxPrice
             // 
@@ -135,7 +135,7 @@ namespace CaffeBar
             this.textBoxPrice.Location = new System.Drawing.Point(221, 168);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(192, 23);
-            this.textBoxPrice.TabIndex = 3;
+            this.textBoxPrice.TabIndex = 2;
             // 
             // textBoxBackstorage
             // 
@@ -143,7 +143,7 @@ namespace CaffeBar
             this.textBoxBackstorage.Location = new System.Drawing.Point(221, 226);
             this.textBoxBackstorage.Name = "textBoxBackstorage";
             this.textBoxBackstorage.Size = new System.Drawing.Size(192, 23);
-            this.textBoxBackstorage.TabIndex = 5;
+            this.textBoxBackstorage.TabIndex = 4;
             // 
             // label6
             // 
@@ -167,7 +167,7 @@ namespace CaffeBar
             this.butttonCancel.Location = new System.Drawing.Point(261, 330);
             this.butttonCancel.Name = "butttonCancel";
             this.butttonCancel.Size = new System.Drawing.Size(100, 35);
-            this.butttonCancel.TabIndex = 7;
+            this.butttonCancel.TabIndex = 6;
             this.butttonCancel.Text = "Cancel";
             this.butttonCancel.UseVisualStyleBackColor = false;
             this.butttonCancel.Click += new System.EventHandler(this.butttonCancel_Click);
@@ -182,7 +182,7 @@ namespace CaffeBar
             this.buttonSubmit.Location = new System.Drawing.Point(133, 330);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(100, 35);
-            this.buttonSubmit.TabIndex = 6;
+            this.buttonSubmit.TabIndex = 5;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = false;
             this.buttonSubmit.Click += new System.EventHandler(this.buttonInsert_Click);

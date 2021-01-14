@@ -13,10 +13,100 @@ WinForm application for Coffee Shop.
 Zadatak je predložio tim: {GM, KM, ČM, VF} ⇒ +5 bodova
 
 ## Requirements:
+To run application it needs to be connected to database with requred structure. To modyfy install: 
 - [MS sql server - Express edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
-- 
+- [Microsoft RDLC Report Designer](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftRdlcReportDesignerforVisualStudio-18001) to install, in Visual Studio go to: _Extensions_-> _Manage Extensions_, under _Online_ search for **Microsoft RDLC Report Designer** and install it.
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) _required only for direct database editing_
 
+## Model design
+Application conssists of one main form that is used like controler for opening wanted subforms. 
+- `class DB` used for getting connection to database.
+- `class Service` used for [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations to database
+- `class User` used for simulating SESSION variable in application
+
+These clases are derined in resprective files: `<class name>.cs`.
+
+### Description of `class DB`
+```cs
+ internal static class DB
+    {
+        internal static string connection_string ;
+
+        internal static SqlConnection getConnection();      
+        internal static void closeConnection();
+    }
+ ```
+
+ ### Description of `class User`
+```cs
+internal static class User
+    {
+        public static string name;
+        public static string authorisation;
+        public static int id;
+        public static bool showNotification;
+    }
+ ```
+  ### Description of `class Service`
+```cs
+internal class Service
+    {
+        //  Get items on Caffe's menu
+        internal static List<Tuple<int, String>> getMenuItems(out String errorMessage);
+        //  Get item details for new receipt from STORAGE --- (coolerAmount,price)
+        internal static Tuple<int, decimal> getPriceCooler(in int id, out String errorMessage);
+        //  Insert new receipt
+        internal static String newReceipt(DataTable dataTableReceipt, String PaymentMethod, out Double total, out Int32 receiptId, double discount);
+        //  Get receipt atributes
+        internal static List<String> getReceiptDetails(int receiptID, out String errorMessage);
+        //  Get list of all empoyes
+        public static List<Tuple<String, String>> getAllEmployeData(out String errorMessage);
+        //  Check if item is on HappyHour 
+        internal static bool onHappyHour(in int itemId, out decimal newPrice, out String errorMessage);
+        internal static void removeExpiredFromHappyHour(in int itemId, out String errorMessage);
+        internal static String addToHappyHour(int itemId, in DateTime from_, in DateTime untill, decimal price);
+        // add amount to cooler
+        internal static void addAmount(int id, int addAmount, string column, out String errorMessage);
+        //  Get discount for employee
+        internal static Tuple<int, int> getDiscount(string employes, out string errorMessage)
+        //  Use discount for employee
+        internal static void useDiscount(string employes, out string errorMessage, string item, int times);
+        internal static DataSet getItemCount();
+        //  Get items on past receipt
+        internal static DataSet getReceiptItems(in int id);
+        //  Delete past receipt
+        internal static void deleteReceipt(in string id, out string errorMsg);
+    }
+ ```
+
+
+## Application description
+There are 2 types of users for this application depending on their authorisation. First ones are waitors which can not do things like delete past receipts, etc. The otherones are admins who can do everything implemented in application.
+
+When issuing new receipt the application requres user to input customer name so it can apply appropriate discount. By default application uses `Regular customer` if it's an employee and they want to use their discount they have to change the customer select to thair username. After that appropriate discount is applyed.
+
+When adding item to new receipt user has to click on button with item's name. Also if user wants to delete item from new receipt he needs to select *whole* row and click  button `deltete item` otherwise the error message will appear.
+To print receipt press `Print receipt` button, after which receipt will be displayed for printing. Also if cash was chosen as payment method, `Change` form will be displayed to calculate change.
+To close register appropriate button needs to be click on, application will generate daily report for printing and/or saveing and user will be logged out.
+
+To view previous receipts user goes to submenu `Receipts`, there he can input time filter for receipts. To view details of receipt receipt row has to be selected and double clicked. Also to delete receipt, appropriate row has to be selected and `Delete` button has to be pressed, this action is reserved for admins.
+
+To view consumtion of drinks in a certain period submenu `Consumption` has to be selected from `Register` menu. There time filter can be set by user, results will be displayed on graph and in table for more details.
+
+Managment menu contains forms for `Storage` and `Happy hour` subforms. Storage form contains list of items in backstorage and in cooler which can be filtered by name via filter input. To move item from backstorage to cooler double click on cooler column of wanted item and enter new wanted amount in cooler. Application will auomaticly remove required amount from backstorage if remainig amount in backstorage is inusfficient appropriate message will be displayed. To edit or delete item from storage select wanted item row and click on appropriate button.
+>Add, edit and delete item actions are restricted to admins.
+
+`Show notification` is used to enable warnings low cooler stoc of any item. Same notifications can be disabled when they are displayed by clicking button `Disable notification`.
+
+`Happy hour` subform is used to add items to happy hour, user with appropriate authorisation needs to select wanted item's row, input happy hour duration, new price and click `Add item`.
+
+Menu item `Accounts` is used for to add and remove users from application. Also item `Help` contains list of instructions for application.
+
+
+
+```cs
+ class DB
+ ```
 # License
 
 © Fran Vojković, Martina Gaćina, Matea Čotić, Mirna Keser

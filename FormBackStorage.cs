@@ -29,7 +29,7 @@ namespace CaffeBar
 
         private void FormBackStorage_Load(object sender, EventArgs e)
         {
-            if ( User.authorisation.Contains("Konobar") )
+            if (User.authorisation.Contains("Konobar"))
             {
                 this.buttonAddItem.Dispose();
                 this.buttonEditItem.Dispose();
@@ -44,7 +44,7 @@ namespace CaffeBar
             SqlConnection connection = DB.getConnection();
             DataSet dataset = new DataSet();
 
-            using(SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage WHERE Deleted = 0", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.Storage WHERE Deleted = 0", connection))
             {
                 adapter.Fill(dataset);//, "Storage");
             }
@@ -152,8 +152,8 @@ namespace CaffeBar
                 {
                     Service.addAmount(int.Parse(dataGridView1[0, e.RowIndex].Value.ToString()), (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount, "Cooler", out errorMsg);
                     if (errorMsg != "")
-                        { MessageBox.Show(errorMsg); return; }
-                    dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value = (int)dataGridView1[e.ColumnIndex+1, e.RowIndex].Value - ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount);
+                    { MessageBox.Show(errorMsg); return; }
+                    dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value = (int)dataGridView1[e.ColumnIndex + 1, e.RowIndex].Value - ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value - previousAmount);
                 }
             }
             else //if(dataGridView1.Columns[e.ColumnIndex].HeaderText == "Backstorage")

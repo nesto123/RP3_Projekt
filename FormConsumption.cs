@@ -47,7 +47,7 @@ namespace CaffeBar
 
         }
 
-        private void UpdateConsumptionView(DateTime from , DateTime to,String filter = "")
+        private void UpdateConsumptionView(DateTime from, DateTime to, String filter = "")
         {
             SqlCommand command = new SqlCommand("SELECT ST.Item,sum(RI.Amount) AS Amount,sum(R.Total) AS Total,  AVG(R.Discount) AS AvgDiscount FROM [Receipts_item] RI, [Receipts] R, [Storage] ST WHERE RI.Id_receiptFK = R.Id AND @from<Time AND Time< @to AND R.Deleted = 0 AND ST.Id = RI.Id_itemFK GROUP BY ST.Item");
             command.Parameters.AddWithValue("@from", from);

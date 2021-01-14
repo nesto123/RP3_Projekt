@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace CaffeBar
 {
@@ -17,6 +17,7 @@ namespace CaffeBar
     public partial class FormAccounts : Form
     {
         DataTable table;
+
         SqlDataAdapter adapter;
 
         public FormAccounts()
@@ -32,9 +33,12 @@ namespace CaffeBar
         private void FormAccounts_Load(object sender, EventArgs e)
         {
             SuspendLayout();
+
             //dataGridView1.AllowUserToAddRows = true;
             dataGridView1.AllowUserToDeleteRows = true;
-            adapter = new SqlDataAdapter("SELECT * FROM [User] WHERE Deleted = 0", DB.connection_string);
+            adapter =
+                new SqlDataAdapter("SELECT * FROM [User] WHERE Deleted = 0",
+                    DB.connection_string);
 
             //////SqlCommandBuilder()
             ////SqlCommand command = new SqlCommand("INSERT INTO [User] (Username,Password) VALUES (@Username,@Password)", DB.getConnection());
@@ -45,17 +49,10 @@ namespace CaffeBar
             ////command = new SqlCommand("UPDATE [User] SET Deleted = 1 WHERE Id=@Id)");
             ////command.Parameters.Add("@Id", SqlDbType.Int, sizeof(int), "Id");
             ////adapter.DeleteCommand = command;
-
-
             table = new DataTable();
             adapter.Fill(table);
 
             this.dataGridView1.DataSource = table;
-            
-
-
-
-
 
             //LoadData();
             ResumeLayout();
@@ -66,12 +63,17 @@ namespace CaffeBar
             SqlConnection connection = DB.getConnection();
             DataSet dataset = new DataSet();
 
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM [User] WHERE Deleted = 0", connection))
+            using (
+                SqlDataAdapter adapter =
+                    new SqlDataAdapter("SELECT * FROM [User] WHERE Deleted = 0",
+                        connection)
+            )
             {
-                adapter.Fill(dataset);//, "Storage");
+                adapter.Fill(dataset); //, "Storage");
             }
 
             var dv = dataset.Tables[0].DefaultView;
+
             //dv.RowFilter = filter;
             dataGridView1.DataSource = dv;
 
@@ -96,14 +98,18 @@ namespace CaffeBar
             //{
             //    System.Windows.Forms.MessageBox.Show(ex.Message);
             //}
-
         }
 
-        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        private void dataGridView1_UserDeletingRow(
+            object sender,
+            DataGridViewRowCancelEventArgs e
+        )
         {
             e.Cancel = true;
             SqlConnection connection = DB.getConnection();
-            SqlCommand command3 = new SqlCommand("UPDATE [User] SET Deleted = 1 WHERE Id=@id", connection);
+            SqlCommand command3 =
+                new SqlCommand("UPDATE [User] SET Deleted = 1 WHERE Id=@id",
+                    connection);
             command3.Parameters.AddWithValue("@id", (int)e.Row.Cells[0].Value);
 
             try
@@ -126,26 +132,36 @@ namespace CaffeBar
             //adapter.Update(table);
         }
 
-        private void FormAccounts_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormAccounts_FormClosed(
+            object sender,
+            FormClosedEventArgs e
+        )
         {
             adapter.Dispose();
         }
 
-        private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        private void dataGridView1_UserAddedRow(
+            object sender,
+            DataGridViewRowEventArgs e
+        )
         {
-            
         }
 
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_RowEnter(
+            object sender,
+            DataGridViewCellEventArgs e
+        )
         {
             //if (dataGridView1.NewRowIndex == e.RowIndex && (e.ColumnIndex == 1 || e.ColumnIndex == 2))
             //    dataGridView1[e.ColumnIndex, e.RowIndex].ReadOnly = false;
             //else
             //    dataGridView1[e.ColumnIndex, e.RowIndex].ReadOnly = true;
-
         }
 
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellEndEdit(
+            object sender,
+            DataGridViewCellEventArgs e
+        )
         {
             // check if username and pass are entered
             ////if(dataGridView1[1,e.RowIndex].Value.ToString() != "" && dataGridView1[2, e.RowIndex].Value.ToString() !="" && dataGridView1[3, e.RowIndex].Value.ToString() != "")
@@ -158,7 +174,6 @@ namespace CaffeBar
             ////    }
             ////    catch (Exception ex)
             ////    {
-
             ////        MessageBox.Show(ex.Message);
             ////    }
             ////}

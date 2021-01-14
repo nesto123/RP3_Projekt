@@ -85,7 +85,7 @@ namespace CaffeBar
         #region Input validation
         private bool failedValidation(in string message)
         {
-            MessageBox.Show("ERROR: Input " +message + " invalid!");
+            MessageBox.Show("ERROR: Input " + message + " invalid!");
             return false;
         }
         private bool validateForms()
@@ -102,7 +102,7 @@ namespace CaffeBar
         }
         #endregion
 
-        
+
 
 
 

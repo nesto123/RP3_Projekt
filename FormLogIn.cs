@@ -51,7 +51,7 @@ namespace CaffeBar
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: Database connection unsuccessful!" + ex.ToString());                
+                MessageBox.Show("ERROR: Database connection unsuccessful!" + ex.ToString());
             }
             finally
             {
@@ -75,7 +75,7 @@ namespace CaffeBar
             //textBoxUsername.Text = Hash("konobar");
         }
 
-        public string Hash(string password)
+        private string Hash(string password)
         {
             var bytes = new UTF8Encoding().GetBytes(password);
             byte[] hashBytes;

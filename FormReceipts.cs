@@ -45,7 +45,7 @@ namespace CaffeBar
             UpdateReceiptsView(dateTimePickerFrom.Value, dateTimePickerTo.Value);
         }
 
-        private void UpdateReceiptsView(DateTime from , DateTime to,String filter = "")
+        private void UpdateReceiptsView(DateTime from, DateTime to, String filter = "")
         {
             SuspendLayout();
 
@@ -96,7 +96,7 @@ namespace CaffeBar
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                string errorMsg="";
+                string errorMsg = "";
                 Service.deleteReceipt(dataGridView1.CurrentRow.Cells[0].Value.ToString(), out errorMsg);
                 UpdateReceiptsView(dateTimePickerFrom.Value, dateTimePickerTo.Value);
                 if (errorMsg != "")

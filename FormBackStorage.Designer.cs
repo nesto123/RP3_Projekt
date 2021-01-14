@@ -95,6 +95,7 @@ namespace CaffeBar
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(601, 330);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
@@ -170,7 +171,7 @@ namespace CaffeBar
             this.buttonEditItem.Location = new System.Drawing.Point(617, 164);
             this.buttonEditItem.Name = "buttonEditItem";
             this.buttonEditItem.Size = new System.Drawing.Size(102, 30);
-            this.buttonEditItem.TabIndex = 6;
+            this.buttonEditItem.TabIndex = 4;
             this.buttonEditItem.Text = "Edit item";
             this.buttonEditItem.UseVisualStyleBackColor = false;
             this.buttonEditItem.Click += new System.EventHandler(this.buttonEditItem_Click);
@@ -180,7 +181,7 @@ namespace CaffeBar
             this.textBoxFilter.Location = new System.Drawing.Point(61, 54);
             this.textBoxFilter.Name = "textBoxFilter";
             this.textBoxFilter.Size = new System.Drawing.Size(209, 20);
-            this.textBoxFilter.TabIndex = 8;
+            this.textBoxFilter.TabIndex = 1;
             this.textBoxFilter.TextChanged += new System.EventHandler(this.textBoxFilter_TextChanged);
             // 
             // label1
@@ -247,7 +248,7 @@ namespace CaffeBar
             this.buttonShowNotification.Location = new System.Drawing.Point(617, 91);
             this.buttonShowNotification.Name = "buttonShowNotification";
             this.buttonShowNotification.Size = new System.Drawing.Size(102, 30);
-            this.buttonShowNotification.TabIndex = 11;
+            this.buttonShowNotification.TabIndex = 2;
             this.buttonShowNotification.Text = "Show notiffication";
             this.buttonShowNotification.UseVisualStyleBackColor = false;
             this.buttonShowNotification.Click += new System.EventHandler(this.buttonShowNotification_Click);

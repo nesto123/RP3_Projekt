@@ -55,6 +55,7 @@ namespace CaffeBar
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxPaymentMethod = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -66,6 +67,7 @@ namespace CaffeBar
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +93,8 @@ namespace CaffeBar
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.dataGridView1.Location = new System.Drawing.Point(10, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -102,7 +105,7 @@ namespace CaffeBar
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(721, 243);
+            this.dataGridView1.Size = new System.Drawing.Size(442, 223);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView1_CellBeginEdit);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -117,7 +120,7 @@ namespace CaffeBar
             this.buttonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrint.ForeColor = System.Drawing.Color.Silver;
             this.buttonPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPrint.Location = new System.Drawing.Point(34, 171);
+            this.buttonPrint.Location = new System.Drawing.Point(34, 160);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(233, 60);
             this.buttonPrint.TabIndex = 3;
@@ -158,7 +161,7 @@ namespace CaffeBar
             this.buttonDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeleteItem.ForeColor = System.Drawing.Color.Silver;
             this.buttonDeleteItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDeleteItem.Location = new System.Drawing.Point(167, 135);
+            this.buttonDeleteItem.Location = new System.Drawing.Point(167, 124);
             this.buttonDeleteItem.Name = "buttonDeleteItem";
             this.buttonDeleteItem.Size = new System.Drawing.Size(100, 30);
             this.buttonDeleteItem.TabIndex = 5;
@@ -176,7 +179,7 @@ namespace CaffeBar
             this.buttonCloseRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseRegister.ForeColor = System.Drawing.Color.Silver;
             this.buttonCloseRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCloseRegister.Location = new System.Drawing.Point(34, 135);
+            this.buttonCloseRegister.Location = new System.Drawing.Point(34, 124);
             this.buttonCloseRegister.Name = "buttonCloseRegister";
             this.buttonCloseRegister.Size = new System.Drawing.Size(116, 30);
             this.buttonCloseRegister.TabIndex = 6;
@@ -247,15 +250,15 @@ namespace CaffeBar
             this.panel2.Controls.Add(this.buttonPrint);
             this.panel2.Controls.Add(this.buttonDeleteItem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(452, 0);
+            this.panel2.Location = new System.Drawing.Point(452, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 243);
+            this.panel2.Size = new System.Drawing.Size(279, 223);
             this.panel2.TabIndex = 10;
             // 
             // textBoxDiscount
             // 
             this.textBoxDiscount.ForeColor = System.Drawing.Color.Silver;
-            this.textBoxDiscount.Location = new System.Drawing.Point(167, 40);
+            this.textBoxDiscount.Location = new System.Drawing.Point(167, 28);
             this.textBoxDiscount.Name = "textBoxDiscount";
             this.textBoxDiscount.Size = new System.Drawing.Size(100, 20);
             this.textBoxDiscount.TabIndex = 20;
@@ -265,7 +268,7 @@ namespace CaffeBar
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 40);
+            this.label2.Location = new System.Drawing.Point(30, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 19;
@@ -276,7 +279,7 @@ namespace CaffeBar
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 73);
+            this.label1.Location = new System.Drawing.Point(30, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 19);
             this.label1.TabIndex = 18;
@@ -292,7 +295,7 @@ namespace CaffeBar
             this.comboBoxCustomer.FormattingEnabled = true;
             this.comboBoxCustomer.Items.AddRange(new object[] {
             "Regular customer"});
-            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 71);
+            this.comboBoxCustomer.Location = new System.Drawing.Point(167, 60);
             this.comboBoxCustomer.Name = "comboBoxCustomer";
             this.comboBoxCustomer.Size = new System.Drawing.Size(100, 21);
             this.comboBoxCustomer.TabIndex = 17;
@@ -303,7 +306,7 @@ namespace CaffeBar
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 102);
+            this.label5.Location = new System.Drawing.Point(30, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 19);
             this.label5.TabIndex = 16;
@@ -321,7 +324,7 @@ namespace CaffeBar
             this.comboBoxPaymentMethod.Items.AddRange(new object[] {
             "Gotovina",
             "Kartica"});
-            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(167, 100);
+            this.comboBoxPaymentMethod.Location = new System.Drawing.Point(167, 91);
             this.comboBoxPaymentMethod.Name = "comboBoxPaymentMethod";
             this.comboBoxPaymentMethod.Size = new System.Drawing.Size(100, 21);
             this.comboBoxPaymentMethod.TabIndex = 7;
@@ -329,16 +332,26 @@ namespace CaffeBar
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.panel3.Padding = new System.Windows.Forms.Padding(10, 10, 0, 10);
             this.panel3.Size = new System.Drawing.Size(731, 243);
             this.panel3.TabIndex = 11;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(10, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(442, 223);
+            this.panel6.TabIndex = 0;
+            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 190);
@@ -378,6 +391,7 @@ namespace CaffeBar
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -411,5 +425,6 @@ namespace CaffeBar
         private System.Windows.Forms.TextBox textBoxDiscount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
     }
 }
