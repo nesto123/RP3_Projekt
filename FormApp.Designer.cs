@@ -36,7 +36,6 @@ namespace CaffeBar
             this.buttonAccounts = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelManagmentSubmenu = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.buttonHappyhour = new System.Windows.Forms.Button();
             this.buttonBackStorage = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
@@ -89,7 +88,7 @@ namespace CaffeBar
             this.buttonUser.ForeColor = System.Drawing.Color.Cornsilk;
             this.buttonUser.Image = ((System.Drawing.Image)(resources.GetObject("buttonUser.Image")));
             this.buttonUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUser.Location = new System.Drawing.Point(0, 554);
+            this.buttonUser.Location = new System.Drawing.Point(0, 513);
             this.buttonUser.Name = "buttonUser";
             this.buttonUser.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonUser.Size = new System.Drawing.Size(198, 45);
@@ -109,7 +108,7 @@ namespace CaffeBar
             this.buttonHelp.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonHelp.Image = ((System.Drawing.Image)(resources.GetObject("buttonHelp.Image")));
             this.buttonHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonHelp.Location = new System.Drawing.Point(0, 509);
+            this.buttonHelp.Location = new System.Drawing.Point(0, 468);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonHelp.Size = new System.Drawing.Size(198, 45);
@@ -131,7 +130,7 @@ namespace CaffeBar
             this.buttonAccounts.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonAccounts.Image = ((System.Drawing.Image)(resources.GetObject("buttonAccounts.Image")));
             this.buttonAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAccounts.Location = new System.Drawing.Point(0, 464);
+            this.buttonAccounts.Location = new System.Drawing.Point(0, 423);
             this.buttonAccounts.Name = "buttonAccounts";
             this.buttonAccounts.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonAccounts.Size = new System.Drawing.Size(198, 45);
@@ -153,7 +152,7 @@ namespace CaffeBar
             this.buttonLogout.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLogout.Image = global::CaffeBar.Properties.Resources.standby_removebg_preview;
             this.buttonLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLogout.Location = new System.Drawing.Point(0, 599);
+            this.buttonLogout.Location = new System.Drawing.Point(0, 558);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonLogout.Size = new System.Drawing.Size(198, 45);
@@ -167,33 +166,13 @@ namespace CaffeBar
             // panelManagmentSubmenu
             // 
             this.panelManagmentSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelManagmentSubmenu.Controls.Add(this.button5);
             this.panelManagmentSubmenu.Controls.Add(this.buttonHappyhour);
             this.panelManagmentSubmenu.Controls.Add(this.buttonBackStorage);
             this.panelManagmentSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelManagmentSubmenu.Location = new System.Drawing.Point(0, 327);
             this.panelManagmentSubmenu.Name = "panelManagmentSubmenu";
-            this.panelManagmentSubmenu.Size = new System.Drawing.Size(198, 137);
+            this.panelManagmentSubmenu.Size = new System.Drawing.Size(198, 96);
             this.panelManagmentSubmenu.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button5.Location = new System.Drawing.Point(0, 90);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(198, 45);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "button5";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // buttonHappyhour
             // 
@@ -424,7 +403,6 @@ namespace CaffeBar
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelManagmentSubmenu;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonHappyhour;
         private System.Windows.Forms.Button buttonBackStorage;
         private System.Windows.Forms.Button buttonStorage;
