@@ -48,7 +48,8 @@ namespace CaffeBar
         }
         private bool validateForms()
         {
-            textBoxPrice.Text = textBoxPrice.Text.Replace(",", ".");
+            textBoxPayed.Text = textBoxPayed.Text.Replace(".", ",");
+
             if (/*!Regex.Match(textBoxPayed.Text, @"^([0-9]+)$", RegexOptions.IgnoreCase).Success &&*/
                 textBoxPayed.Text == "" ||
                 !double.TryParse(textBoxPayed.Text, out _)
@@ -57,7 +58,6 @@ namespace CaffeBar
 
             else if (_total > double.Parse(textBoxPayed.Text))
                 return failedValidation("Payed (insuficient)");
-
             else
                 return true;
         }
