@@ -319,7 +319,7 @@ namespace CaffeBar
 
                     }
                 }
-                else if (row["item"].ToString().IndexOf("Juice", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
+                else if (row["item"].ToString().IndexOf("cijeđeni sok", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some juice 
                 {
                     if (discount.Item2 > 0)
                     {
