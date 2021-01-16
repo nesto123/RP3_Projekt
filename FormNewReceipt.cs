@@ -174,23 +174,29 @@ namespace CaffeBar
         #region Edit quantity of items on receipt
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-
-            AddItemButton btn = new AddItemButton();
-            btn.Name = dataGridView1[1, e.RowIndex].Value.ToString();
-            btn.Id = (int)dataGridView1[0, e.RowIndex].Value;
-            btn.Text = dataGridView1[1, e.RowIndex].Value.ToString();
-            btn.Item = dataGridView1[1, e.RowIndex].Value.ToString();
-            int new_val = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value, fail_flag;
-            dataGridView1[e.ColumnIndex, e.RowIndex].Value = fail_flag = lineditprevamount;
-
-            for (int i = 0; i < new_val; i++)
+            if (lineditprevamount < (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value)
             {
-                buttonAddItemToReceipt_Click(btn, EventArgs.Empty);
-                if ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value == fail_flag)
-                    break;
-                else
-                    fail_flag = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+
+                AddItemButton btn = new AddItemButton();
+                btn.Name = dataGridView1[1, e.RowIndex].Value.ToString();
+                btn.Id = (int)dataGridView1[0, e.RowIndex].Value;
+                btn.Text = dataGridView1[1, e.RowIndex].Value.ToString();
+                btn.Item = dataGridView1[1, e.RowIndex].Value.ToString();
+                int new_val = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value, fail_flag;
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = fail_flag = lineditprevamount;
+
+                for (int i = lineditprevamount; i < new_val; i++)
+                {
+                    buttonAddItemToReceipt_Click(btn, EventArgs.Empty);
+                    if ((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value == fail_flag)
+                        break;
+                    else
+                        fail_flag = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+                }
             }
+            else if((int)dataGridView1[e.ColumnIndex, e.RowIndex].Value <= 0)
+                dataGridView1[e.ColumnIndex, e.RowIndex].Value = lineditprevamount;
+
 
         }
 

@@ -147,7 +147,7 @@ namespace CaffeBar
             {
                 SqlDataReader dataReader = command.ExecuteReader();
                 dataReader.Read();
-                for (var i = 0; i < 5; ++i)
+                for (var i = 0; i < 7; ++i)
                     list.Add(dataReader.GetValue(i).ToString());
             }
             catch (Exception ex)

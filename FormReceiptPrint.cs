@@ -56,9 +56,19 @@ namespace CaffeBar
                     row["Total"] = amount * price;
                 }
 
-                //popravit!!!!!!!!!!!!!!!!!!!!!!
-                String errorMsg;
-                _date = Service.getReceiptDetails((Int32.Parse(_receiptId)), out errorMsg)[1];
+                
+                String errorMsg, waiter="";
+                List<String> l = Service.getReceiptDetails((Int32.Parse(_receiptId)), out errorMsg);
+                int _waiterid = int.Parse(l[6]);
+                _date = l[1];
+
+                List<Tuple<String, String>> list2 = Service.getAllEmployeData(out errorMsg);
+                foreach (var item in list2)
+                    if (_waiterid == int.Parse(item.Item1))
+                    {
+                        waiter = item.Item2;
+                    }
+
                 if (errorMsg != "")
                 { MessageBox.Show(errorMsg); ResumeLayout(); return; }
 
@@ -73,7 +83,7 @@ namespace CaffeBar
                 new ReportParameter("parameterDiscount", _discount),
                 new ReportParameter("parameterId", _receiptId),
                 new ReportParameter("parameterPaymentMethod", _paymentMethod),
-                new ReportParameter("paremeterIzdao", User.name),
+                new ReportParameter("paremeterIzdao", waiter),
                 };
                 this.reportViewer1.LocalReport.SetParameters(para);
                 this.reportViewer1.RefreshReport();
