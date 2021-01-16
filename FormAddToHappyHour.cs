@@ -64,14 +64,14 @@ namespace CaffeBar
 
         private void buttonAddItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
-            //dateTimePickerFrom.Value;
-            //dateTimePickerTo.Value;
-            //textBoxPrice.Text
+            textBoxPrice.Text = textBoxPrice.Text.Replace(".", ",");
+
             if (dataGridView1.SelectedRows.Count < 1)
                 MessageBox.Show("Please select a row!");
-            if (decimal.TryParse(textBoxPrice.Text, out _))
+            else if (textBoxPrice.Text == "" || !decimal.TryParse(textBoxPrice.Text, out _))
                 MessageBox.Show("Price not valid!");
+            else if(dateTimePickerFrom.Value > dateTimePickerTo.Value || dateTimePickerTo.Value < DateTime.Now)
+                MessageBox.Show("Date not valid!");
             else
             {
                 string error = Service.addToHappyHour((int)dataGridView1.SelectedRows[0].Cells[0].Value, dateTimePickerFrom.Value, dateTimePickerTo.Value, decimal.Parse(textBoxPrice.Text));
@@ -79,7 +79,6 @@ namespace CaffeBar
                     MessageBox.Show(error);
                 UpdateStorageView();
             }
-
         }
     }
 }

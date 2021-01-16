@@ -9,7 +9,7 @@ using System.Data;
 namespace CaffeBar
 {
     /// <summary>
-    /// Database comunication implementation class.
+    /// Database CRUD operation class.
     /// </summary>
     internal class Service
     {
