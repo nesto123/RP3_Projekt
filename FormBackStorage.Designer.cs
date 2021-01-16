@@ -249,7 +249,7 @@ namespace CaffeBar
             this.buttonShowNotification.Name = "buttonShowNotification";
             this.buttonShowNotification.Size = new System.Drawing.Size(102, 30);
             this.buttonShowNotification.TabIndex = 2;
-            this.buttonShowNotification.Text = "Show notiffication";
+            this.buttonShowNotification.Text = "Show notification";
             this.buttonShowNotification.UseVisualStyleBackColor = false;
             this.buttonShowNotification.Click += new System.EventHandler(this.buttonShowNotification_Click);
             // 

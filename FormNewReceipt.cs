@@ -23,6 +23,8 @@ namespace CaffeBar
         {
             InitializeComponent();
             dataTableReceipt = new DataTable();
+            label2.Hide();
+            textBoxDiscount.Hide();
         }
         #region Initialisation
         private void FormNewReceipt_Load(object sender, EventArgs e)
