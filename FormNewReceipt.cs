@@ -297,7 +297,7 @@ namespace CaffeBar
             tmp = dataTableReceipt.Clone();
             foreach (DataRow row in dataTableReceipt.Rows)
             {
-                if (row["item"].ToString().IndexOf("Caffe", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
+                if (row["item"].ToString().IndexOf("kava", StringComparison.CurrentCultureIgnoreCase) != -1)    // there's some coffee 
                 {
                     if (discount.Item1 > 0)
                     {
