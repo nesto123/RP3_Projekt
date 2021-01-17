@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************
+ *      Copyright (C) 2021 Fran Vojković, Martina Gaćina, Matea Čotić, Mirna Keser     *
+ *                                                                                     *
+ *              This file is part of the RP3_Projekt project.                          *
+ *                                                                                     *
+ ***************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

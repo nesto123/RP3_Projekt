@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************
+ *      Copyright (C) 2021 Fran Vojković, Martina Gaćina, Matea Čotić, Mirna Keser     *
+ *                                                                                     *
+ *              This file is part of the RP3_Projekt project.                          *
+ *                                                                                     *
+ ***************************************************************************************/
+
+using System;
 using System.Windows.Forms;
 
 namespace CaffeBar
@@ -44,44 +51,44 @@ namespace CaffeBar
         #endregion
 
         #region Submenu
-        private void buttonMedia_Click(object sender, EventArgs e)
+        private void buttonRegister_Click(object sender, EventArgs e)
         {
             showSubMenu(panelRegisterSubmenu);
         }
 
         private void buttonNewReceipt_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormNewReceipt());
+            openSubForm(new FormNewReceipt());
             hideSubmenu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormConsumption());
+            openSubForm(new FormConsumption());
             hideSubmenu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openChildForm(new FromReceipts());
+            openSubForm(new FromReceipts());
             hideSubmenu();
         }
         #endregion
         #region ManagmentSubmenu
-        private void buttonPlaylistManagment_Click(object sender, EventArgs e)
+        private void buttonManagment_Click(object sender, EventArgs e)
         {
             showSubMenu(panelManagmentSubmenu);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormBackStorage());
+            openSubForm(new FormBackStorage());
             hideSubmenu();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormAddToHappyHour());
+            openSubForm(new FormAddToHappyHour());
             hideSubmenu();
         }
 
@@ -95,8 +102,8 @@ namespace CaffeBar
         #region Help
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormHelp());
-            hideSubmenu();// premjestit tako da u npr. buttonMedia_Click i ostale -- isto na kraj
+            openSubForm(new FormHelp());
+            hideSubmenu();
         }
         #endregion
 
@@ -107,18 +114,18 @@ namespace CaffeBar
 
         private Form activeForm = null;
 
-        private void openChildForm(Form childForm)
+        private void openSubForm(Form subForm)
         {
             if (activeForm != null)
                 activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChieldForm.Controls.Add(childForm);
-            panelChieldForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            activeForm = subForm;
+            subForm.TopLevel = false;
+            subForm.FormBorderStyle = FormBorderStyle.None;
+            subForm.Dock = DockStyle.Fill;
+            panelChieldForm.Controls.Add(subForm);
+            panelChieldForm.Tag = subForm;
+            subForm.BringToFront();
+            subForm.Show();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -141,7 +148,7 @@ namespace CaffeBar
 
         private void buttonAccounts_Click_1(object sender, EventArgs e)
         {
-            openChildForm(new FormAccounts());
+            openSubForm(new FormAccounts());
             hideSubmenu();
         }
 

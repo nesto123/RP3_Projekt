@@ -1,5 +1,7 @@
 # RP3_Projekt
-WinForm application for Coffee Shop.
+Window Forms application for Coffee Shop in [VS 2019](https://visualstudio.microsoft.com/vs/).
+
+Presentation is avalible in [Documentation/_RP3__Projekt_NOVO.pdf](Documentation/_RP3__Projekt_NOVO.pdf).
 
 ## Zadatak
 *Caffe Bar - Blagajna za caffe bar.*
@@ -76,7 +78,7 @@ internal class Service
  ```
 
 
-## Application description
+## Usage description
 There are 2 types of users of this application depending on their authorisation. First ones are waters which can not do things like delete past receipts, etc. The other ones are admins who can do everything implemented in the application.
 
 When issuing new receipt the application requires users to input customer name so it can apply the appropriate discount. By default, application uses `Regular customer` if it's an employee and they want to use their discount, they have to change the customer select to their username. After that appropriate discount is applied.
@@ -99,12 +101,12 @@ Management menu contains forms for `Storage` and `Happy hour` subforms. A storag
 Menu item `Accounts` is used for to add and remove users from the application. Also item `Help` contains a list of instructions for application.
 
 
+## Database schema
 
-```cs
- class DB
- ```
+![Database schema](Documentation/Database.png "Database")
+
 # License
 
-© Fran Vojković, Martina Gaćina, Matea Čotić, Mirna Keser
+© 2021 Fran Vojković, Martina Gaćina, Matea Čotić, Mirna Keser, All rights reserved.
 
 Licensed under [License](LICENSE).

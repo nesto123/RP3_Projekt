@@ -232,7 +232,7 @@ namespace CaffeBar
             this.buttonManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonManagement.UseVisualStyleBackColor = true;
-            this.buttonManagement.Click += new System.EventHandler(this.buttonPlaylistManagment_Click);
+            this.buttonManagement.Click += new System.EventHandler(this.buttonManagment_Click);
             // 
             // panelRegisterSubmenu
             // 
@@ -323,7 +323,7 @@ namespace CaffeBar
             this.buttonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonMedia_Click);
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // panelLogo
             // 
