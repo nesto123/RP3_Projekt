@@ -133,7 +133,7 @@ namespace CaffeBar
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(116, 30);
             this.labelTitle.TabIndex = 11;
-            this.labelTitle.Text = "Raceipts";
+            this.labelTitle.Text = "Receipts";
             // 
             // buttonCloseFormStorage
             // 

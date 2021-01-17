@@ -286,7 +286,7 @@ namespace CaffeBar
         #endregion
 
         #region Free stuff for staff
-        private void addDiscount(string employe)/// možda doradit
+        private void addDiscount(string employe)
         {
             // get today discount count on juice and coffee for employee ->name 
             string errorMessage;

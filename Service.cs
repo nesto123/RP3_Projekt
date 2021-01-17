@@ -70,7 +70,7 @@ namespace CaffeBar
         internal static String newReceipt(DataTable dataTableReceipt, String PaymentMethod, out Double total, out Int32 receiptId, double discount)
         {
             String errorMessage = "";
-            SqlTransaction transaction = null;
+            //SqlTransaction transaction = null;
             total = 0.0;
             Double amount, price;
             receiptId = 0;
@@ -118,8 +118,6 @@ namespace CaffeBar
                     command2.ExecuteNonQuery();
                     command3.ExecuteNonQuery();
                     command2.Parameters.Clear();
-
-                    //errorMessage = int.Parse(item["Amount"].ToString()).ToString()+" i="+ item["Id"].ToString();
                 }
             }
             catch (Exception ex)
@@ -255,7 +253,7 @@ namespace CaffeBar
             return;
         }
         //->     // not done -- not tested
-        internal static String addToHappyHour(int itemId, in DateTime from_, in DateTime untill, decimal price) // dodat još provjeru je li artikl već na akciji pa onemogućit to
+        internal static String addToHappyHour(int itemId, in DateTime from_, in DateTime untill, decimal price) 
         {
             SqlConnection connection = DB.getConnection();
             SqlCommand command = new SqlCommand("INSERT INTO dbo.Happyhour(IdItem_FK, From_, Untill, Newprice)  VALUES(@idItem_FK, @from_, @untill, @Newprice)", connection);

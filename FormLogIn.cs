@@ -88,26 +88,3 @@ namespace CaffeBar
     }
 }
 
-/*namespace Connection_Class
-{
-    public class Connection_Query
-    {
-
-        string ConnectionString = "";
-        SqlConnection con;
-
-        public void OpenConection()
-        {
-            con = new SqlConnection(ConnectionString);
-            con.Open();
-        }
-
-
-        public void CloseConnection()
-        {
-            con.Close();
-        }
-
-
-    }
-}*/
